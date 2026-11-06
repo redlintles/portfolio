@@ -1,0 +1,17 @@
+{
+  "slug": "scripts",
+  "type": "Secondary",
+  "project_name": "projects.scripts.project_name",
+  "description": "projects.scripts.description",
+  "technologies": [
+    "Python",
+    "Shell"
+  ],
+  "image_links": [],
+  "video_link": "",
+  "github_repo": "https://github.com/redlintles/bash-scripts",
+  "successes": "projects.scripts.successes",
+  "project_link": "",
+  "failures": "projects.scripts.failures",
+  "illustration_link": "/images/projects/scripts.svg"
+}

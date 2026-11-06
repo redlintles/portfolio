@@ -1,0 +1,76 @@
+{
+  "contacts": [
+    {
+      "value": "joaopaulo2112004@gmail.com",
+      "href": "mailto:joaopaulo2112004@gmail.com"
+    },
+    {
+      "value": "João Paulo",
+      "href": "https://www.linkedin.com/in/jo%C3%A3o-paulo-396302262/"
+    },
+    {
+      "value": "redlintles",
+      "href": "https://github.com/redlintles"
+    },
+    {
+      "value": "(11) 95892-3093",
+      "href": "tel:+5511958923093"
+    },
+    {
+      "value": "Redlint",
+      "href": "https://www.youtube.com/results?search_query=Redlint"
+    }
+  ],
+  "technologies": [
+    {
+      "name": "Rust",
+      "rating": 5
+    },
+    {
+      "name": "TypeScript",
+      "rating": 5
+    },
+    {
+      "name": "Linux",
+      "rating": 5
+    },
+    {
+      "name": "Python",
+      "rating": 5
+    },
+    {
+      "name": "Docker",
+      "rating": 4
+    },
+    {
+      "name": "Cloud",
+      "rating": 4
+    },
+    {
+      "name": "AI",
+      "rating": 4
+    },
+    {
+      "name": "PHP",
+      "rating": 3
+    },
+    {
+      "name": "Java",
+      "rating": 3
+    },
+    {
+      "name": "C",
+      "rating": 3
+    }
+  ],
+  "image": {
+    "src": "/images/workspace.jpg",
+    "source": "https://unsplash.com/photos/turned-on-gray-laptop-computer-XJXWbfSo2f0",
+    "license": "https://unsplash.com/license"
+  },
+  "languageLabels": {
+    "pt-BR": "PT",
+    "en": "EN",
+    "es": "ES"
+  }
+}

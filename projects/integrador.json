@@ -1,0 +1,13 @@
+{
+  "slug": "integrador",
+  "type": "Secondary",
+  "project_name": "projects.integrador.project_name",
+  "description": "projects.integrador.description",
+  "technologies": [],
+  "image_links": [],
+  "video_link": "",
+  "github_repo": "https://github.com/redlintles/projeto-integrador",
+  "successes": "projects.integrador.successes",
+  "project_link": "",
+  "failures": "projects.integrador.failures"
+}

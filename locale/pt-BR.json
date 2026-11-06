@@ -1,0 +1,178 @@
+{
+  "name": "João Paulo de Amorim Silva",
+  "brand": "JP.",
+  "portfolio": "PORTFÓLIO / DESENVOLVIMENTO",
+  "nav": [
+    "Início",
+    "Sobre",
+    "Projetos",
+    "Contato"
+  ],
+  "skip": "Pular para o conteúdo",
+  "language": "Idioma",
+  "heroEyebrow": "SOFTWARE · SISTEMAS · CURIOSIDADE",
+  "heroTitle": [
+    "Entender a fundo.",
+    "Construir com propósito."
+  ],
+  "heroBody": "Sou João Paulo, desenvolvedor de software. Entre Rust, web e Linux, transformo curiosidade em ferramentas que resolvem problemas reais.",
+  "explore": "Explorar projetos",
+  "aboutLink": "Minha trajetória",
+  "selected": "01 / PROJETOS EM DESTAQUE",
+  "selectedTitle": "Ideias que viraram código.",
+  "allProjects": "Todos os projetos",
+  "details": "Explorar projeto",
+  "techLabel": "02 / TECNOLOGIAS",
+  "techTitle": "Ferramentas, com fundamento.",
+  "techBody": "Selecione uma tecnologia para conhecer minha experiência. As notas representam minha autoavaliação.",
+  "rating": "Autoavaliação",
+  "secondaryLabel": "03 / OUTRAS EXPLORAÇÕES",
+  "secondaryTitle": "Mais caminhos percorridos.",
+  "educationLabel": "04 / FORMAÇÃO & APRENDIZADO",
+  "educationTitle": "Aprender faz parte do processo.",
+  "education": [
+    {
+      "title": "Desenvolvimento de Software Multiplataforma",
+      "detail": "Graduação concluída · Fatec Cotia"
+    },
+    {
+      "title": "Mais de 15 cursos na área de tecnologia",
+      "detail": "Estudos em Linux, Docker, Node.js, React, TypeScript, CSS e inglês."
+    },
+    {
+      "title": "Linux e redes",
+      "detail": "Preparação para LPIC-1 e estudos de redes voltados à CCNA."
+    }
+  ],
+  "contactTitle": "Vamos construir algo?",
+  "contactBody": "Para conversar sobre software, compartilhar uma ideia ou conhecer melhor meu trabalho.",
+  "contactAction": "Entre em contato",
+  "footer": "Feito com intenção. Construído com Next.js.",
+  "source": "Código no GitHub",
+  "live": "Acessar projeto",
+  "offline": "Este projeto não está publicado em um site ou serviço no momento.",
+  "successes": "Conquistas e aprendizados",
+  "failures": "Desafios e próximos passos",
+  "gallery": "Imagens do projeto",
+  "noImages": "Capturas do projeto serão adicionadas em breve.",
+  "video": "Vídeo do projeto",
+  "back": "Voltar aos projetos",
+  "projectsTitle": "Projetos & experimentos.",
+  "projectsBody": "Uma seleção de ferramentas, aplicações e explorações ao longo do meu aprendizado.",
+  "filters": [
+    "Todos",
+    "Destaques",
+    "Outros projetos"
+  ],
+  "search": "Buscar por nome ou tecnologia",
+  "empty": "Nenhum projeto encontrado.",
+  "aboutTitle": "A curiosidade é o ponto de partida.",
+  "aboutIntro": "Desenvolvedor de software, formado pela Fatec Cotia. Meu interesse vai do funcionamento dos sistemas à experiência de quem usa cada ferramenta.",
+  "aboutParagraphs": [
+    "Comecei pela curiosidade de criar jogos: tentei aprender Lua para Roblox e depois encontrei Python nas aulas do canal Ignorância Zero. Criei jogos com Pygame e, ao conhecer Django, fui estudar HTML, CSS, JavaScript, Git e as ferramentas do desenvolvimento web.",
+    "Python continuou comigo em scripts, ferramentas de linha de comando e exercícios. Na faculdade, conheci CentOS e adotei Ubuntu no computador pessoal. Passei a explorar redes, servidores, Docker, nuvem e automação com Ansible, Terraform e Vagrant.",
+    "Linux se tornou uma área importante nos meus estudos. Explorei distribuições como Ubuntu, RHEL, CentOS, Alpine, AlmaLinux, Fedora e Arch, além de shell, permissões, firewalls, servidores web e laboratórios com máquinas virtuais. Hoje estudo para a LPIC-1 e aprofundo conhecimentos em redes.",
+    "A vontade de entender como as coisas funcionam me levou a Rust, minha linguagem favorita. Criei o Textforge: uma minilinguagem para processamento de texto em lote com pipelines descritivos, publicada no crates.io. Os bindings para Python e Node.js estão em desenvolvimento.",
+    "No estágio da Fatec, trabalhei em um sistema de gestão de ativos e inventário com TypeScript, NestJS e React, acompanhado de um aplicativo Kotlin para leitura de códigos de barras.",
+    "Também explorei desenvolvimento assistido por IA em um fork do GNS3, com especificações incrementais, revisão e correção de código. Trabalhei em recursos de zoom, imagens, agrupamento de dispositivos, texto e formas geométricas. Venho ainda trabalhando em uma proposta de RFC sobre partial impl blocks em Rust.",
+    "No canal Redlint, hoje inativo, publiquei mais de 150 shorts explicando conceitos de TI de maneira direta. Continuo estudando por cursos, documentação e projetos, com interesse em testes, documentação, segurança e contribuição open source."
+  ],
+  "contactLabels": [
+    "E-mail",
+    "LinkedIn",
+    "GitHub",
+    "Telefone",
+    "YouTube · Redlint"
+  ],
+  "imageAlt": "Computador e código em um ambiente de desenvolvimento",
+  "imageCredit": "Fotografia: Unsplash · licença de uso gratuito",
+  "illustration": "Imagem ilustrativa de tecnologia",
+  "technologyDescriptions": {
+    "Rust": "Processamento de texto, ferramentas e estudo de sistemas.",
+    "TypeScript": "Aplicações web, APIs e organização de projetos.",
+    "Linux": "Shell, servidores, redes e ambientes de laboratório.",
+    "Python": "Scripts, automação e ferramentas de linha de comando.",
+    "Docker": "Containers e ambientes reproduzíveis.",
+    "Cloud": "Estudos e práticas com AWS e Azure.",
+    "AI": "Especificações, revisão e desenvolvimento assistido por IA.",
+    "PHP": "APIs e desenvolvimento web.",
+    "Java": "Fundamentos e estudos de programação.",
+    "C": "Fundamentos de programação de baixo nível."
+  },
+  "projects": {
+    "textforge": {
+      "project_name": "Textforge",
+      "description": "Processamento de texto em lote com pipelines simples e descritivos.",
+      "successes": "Minilinguagem de pipelines implementada em Rust e publicada como biblioteca no crates.io.",
+      "failures": "Os bindings para Python e Node.js continuam em desenvolvimento."
+    },
+    "inventario-fatec": {
+      "project_name": "Inventário Fatec",
+      "description": "Gestão de ativos e inventário com aplicativo para leitura de códigos de barras.",
+      "successes": "Sistema de inventário desenvolvido no estágio da Fatec, com aplicação web e leitura de códigos de barras em Kotlin.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    },
+    "api-php": {
+      "project_name": "API PHP",
+      "description": "API para uma empresa hipotética de materiais de construção.",
+      "successes": "API para uma empresa hipotética de materiais de construção.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    },
+    "gns3": {
+      "project_name": "GNS3 · Fork",
+      "description": "Exploração de melhorias na edição de topologias e desenvolvimento assistido por IA.",
+      "successes": "Exploração de melhorias na edição de topologias e desenvolvimento assistido por IA.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    },
+    "textforge-node": {
+      "project_name": "Textforge / Node.js",
+      "description": "Bindings de Textforge para Node.js, em desenvolvimento.",
+      "successes": "Bindings de Textforge para Node.js, em desenvolvimento.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    },
+    "textforge-python": {
+      "project_name": "Textforge / Python",
+      "description": "Bindings de Textforge para Python, em desenvolvimento.",
+      "successes": "Bindings de Textforge para Python, em desenvolvimento.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    },
+    "scripts": {
+      "project_name": "Scripts & utilitários",
+      "description": "Scripts e ferramentas de uso geral para o dia a dia.",
+      "successes": "Scripts e ferramentas de uso geral para o dia a dia.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    },
+    "colour": {
+      "project_name": "Colour",
+      "description": "Meu primeiro projeto com TypeScript e React.",
+      "successes": "Meu primeiro projeto com TypeScript e React.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    },
+    "docker": {
+      "project_name": "Docker Compose",
+      "description": "Templates para projetos baseados em Docker Compose.",
+      "successes": "Templates para projetos baseados em Docker Compose.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    },
+    "integrador": {
+      "project_name": "Projeto integrador",
+      "description": "Um dos projetos integradores desenvolvidos na Fatec.",
+      "successes": "Um dos projetos integradores desenvolvidos na Fatec.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    },
+    "pygame": {
+      "project_name": "Pygame Projects",
+      "description": "Jogos criados durante meus estudos de Python.",
+      "successes": "Jogos criados durante meus estudos de Python.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    },
+    "html-css": {
+      "project_name": "HTML & CSS",
+      "description": "Páginas feitas à mão nos primeiros meses de estudo de desenvolvimento web.",
+      "successes": "Páginas feitas à mão nos primeiros meses de estudo de desenvolvimento web.",
+      "failures": "Detalhes de desafios ainda serão documentados."
+    }
+  },
+  "notFoundTitle": "Página não encontrada.",
+  "notFoundBody": "O endereço pode ter mudado. Explore os projetos para continuar."
+}

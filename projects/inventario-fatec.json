@@ -1,0 +1,18 @@
+{
+  "slug": "inventario-fatec",
+  "type": "Primary",
+  "project_name": "projects.inventario-fatec.project_name",
+  "description": "projects.inventario-fatec.description",
+  "technologies": [
+    "TypeScript",
+    "NestJS",
+    "React",
+    "Kotlin"
+  ],
+  "image_links": [],
+  "video_link": "",
+  "github_repo": "https://github.com/redlintles/projeto_estagio_inventario_fatec",
+  "successes": "projects.inventario-fatec.successes",
+  "project_link": "",
+  "failures": "projects.inventario-fatec.failures"
+}

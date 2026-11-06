@@ -1,0 +1,16 @@
+{
+  "slug": "docker",
+  "type": "Secondary",
+  "project_name": "projects.docker.project_name",
+  "description": "projects.docker.description",
+  "technologies": [
+    "Docker"
+  ],
+  "image_links": [],
+  "video_link": "",
+  "github_repo": "https://github.com/redlintles/docker-compose-templates",
+  "successes": "projects.docker.successes",
+  "project_link": "",
+  "failures": "projects.docker.failures",
+  "illustration_link": "/images/projects/containers.svg"
+}

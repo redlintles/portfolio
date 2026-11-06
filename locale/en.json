@@ -1,0 +1,178 @@
+{
+  "name": "João Paulo de Amorim Silva",
+  "brand": "JP.",
+  "portfolio": "PORTFOLIO / DEVELOPMENT",
+  "nav": [
+    "Home",
+    "About",
+    "Projects",
+    "Contact"
+  ],
+  "skip": "Skip to content",
+  "language": "Language",
+  "heroEyebrow": "SOFTWARE · SYSTEMS · CURIOSITY",
+  "heroTitle": [
+    "Understand deeply.",
+    "Build with purpose."
+  ],
+  "heroBody": "I’m João Paulo, a software developer. Across Rust, the web and Linux, I turn curiosity into tools that solve real problems.",
+  "explore": "Explore projects",
+  "aboutLink": "My journey",
+  "selected": "01 / SELECTED PROJECTS",
+  "selectedTitle": "Ideas turned into code.",
+  "allProjects": "All projects",
+  "details": "Explore project",
+  "techLabel": "02 / TECHNOLOGIES",
+  "techTitle": "Tools, with understanding.",
+  "techBody": "Select a technology to explore my experience. Ratings are self-assessments.",
+  "rating": "Self-assessment",
+  "secondaryLabel": "03 / OTHER EXPLORATIONS",
+  "secondaryTitle": "More paths explored.",
+  "educationLabel": "04 / EDUCATION & LEARNING",
+  "educationTitle": "Learning is part of the process.",
+  "education": [
+    {
+      "title": "Multiplatform Software Development",
+      "detail": "Completed degree · Fatec Cotia"
+    },
+    {
+      "title": "More than 15 technology courses",
+      "detail": "Studies in Linux, Docker, Node.js, React, TypeScript, CSS and English."
+    },
+    {
+      "title": "Linux and networking",
+      "detail": "Preparing for LPIC-1 and studying networking for CCNA."
+    }
+  ],
+  "contactTitle": "Let’s build something.",
+  "contactBody": "To talk about software, share an idea or learn more about my work.",
+  "contactAction": "Get in touch",
+  "footer": "Made with intention. Built with Next.js.",
+  "source": "Code on GitHub",
+  "live": "Visit project",
+  "offline": "This project is not currently deployed to a website or service.",
+  "successes": "Achievements and learning",
+  "failures": "Challenges and next steps",
+  "gallery": "Project images",
+  "noImages": "Project screenshots will be added soon.",
+  "video": "Project video",
+  "back": "Back to projects",
+  "projectsTitle": "Projects & experiments.",
+  "projectsBody": "Tools, applications and explorations from my learning journey.",
+  "filters": [
+    "All",
+    "Featured",
+    "Other projects"
+  ],
+  "search": "Search by name or technology",
+  "empty": "No projects found.",
+  "aboutTitle": "Curiosity is the starting point.",
+  "aboutIntro": "Software developer and Fatec Cotia graduate. My interests range from how systems work to the experience of the people who use them.",
+  "aboutParagraphs": [
+    "I started with an interest in making games, first trying Lua for Roblox, then learning Python through the Ignorância Zero channel. I made Pygame games. Discovering Django led me to HTML, CSS, JavaScript, Git and web development tools.",
+    "Python remained my tool for scripts, command-line utilities and exercises. At college I discovered CentOS and switched my personal computer to Ubuntu. I explored networking, servers, Docker, cloud and automation with Ansible, Terraform and Vagrant.",
+    "Linux became a key interest. I explored Ubuntu, RHEL, CentOS, Alpine, AlmaLinux, Fedora and Arch, alongside shell, permissions, firewalls, web servers and virtual-machine labs. I am studying for LPIC-1 and deepening my networking knowledge.",
+    "Wanting to understand how things work led me to Rust, my favorite language. I created Textforge, a small language for batch text processing through descriptive pipelines, published on crates.io. Python and Node.js bindings are in development.",
+    "During my Fatec internship I worked on an asset and inventory management system with TypeScript, NestJS and React, accompanied by a Kotlin barcode-scanning app.",
+    "I also explored AI-assisted development in a GNS3 fork, using incremental specifications, code reviews and corrections. I worked on zoom, images, device grouping, text and geometric shapes. I am also working on a Rust RFC proposal for partial impl blocks.",
+    "On Redlint, now inactive, I published over 150 shorts explaining IT concepts directly. I continue learning through courses, documentation and projects, with an interest in testing, documentation, security and open-source contribution."
+  ],
+  "contactLabels": [
+    "Email",
+    "LinkedIn",
+    "GitHub",
+    "Phone",
+    "YouTube · Redlint"
+  ],
+  "imageAlt": "Computer and code in a development workspace",
+  "imageCredit": "Photography: Unsplash · free-use license",
+  "illustration": "Illustrative technology image",
+  "technologyDescriptions": {
+    "Rust": "Text processing, tools and systems exploration.",
+    "TypeScript": "Web applications, APIs and project organization.",
+    "Linux": "Shell, servers, networking and lab environments.",
+    "Python": "Scripts, automation and command-line tools.",
+    "Docker": "Containers and reproducible environments.",
+    "Cloud": "Studies and practice with AWS and Azure.",
+    "AI": "Specifications, reviews and AI-assisted development.",
+    "PHP": "APIs and web development.",
+    "Java": "Programming fundamentals and studies.",
+    "C": "Low-level programming fundamentals."
+  },
+  "projects": {
+    "textforge": {
+      "project_name": "Textforge",
+      "description": "Batch text processing with simple, descriptive pipelines.",
+      "successes": "A pipeline language implemented in Rust and published as a library on crates.io.",
+      "failures": "Python and Node.js bindings are still in development."
+    },
+    "inventario-fatec": {
+      "project_name": "Fatec Inventory",
+      "description": "Asset and inventory management with a barcode-scanning app.",
+      "successes": "An inventory system developed during my Fatec internship, with a web application and Kotlin barcode scanning.",
+      "failures": "Specific challenges are still to be documented."
+    },
+    "api-php": {
+      "project_name": "API PHP",
+      "description": "API for a hypothetical building-materials company.",
+      "successes": "API for a hypothetical building-materials company.",
+      "failures": "Specific challenges are still to be documented."
+    },
+    "gns3": {
+      "project_name": "GNS3 · Fork",
+      "description": "Exploring topology editing improvements and AI-assisted development.",
+      "successes": "Exploring topology editing improvements and AI-assisted development.",
+      "failures": "Specific challenges are still to be documented."
+    },
+    "textforge-node": {
+      "project_name": "Textforge / Node.js",
+      "description": "Textforge bindings for Node.js, in development.",
+      "successes": "Textforge bindings for Node.js, in development.",
+      "failures": "Specific challenges are still to be documented."
+    },
+    "textforge-python": {
+      "project_name": "Textforge / Python",
+      "description": "Textforge bindings for Python, in development.",
+      "successes": "Textforge bindings for Python, in development.",
+      "failures": "Specific challenges are still to be documented."
+    },
+    "scripts": {
+      "project_name": "Scripts & Utilities",
+      "description": "General-purpose scripts and everyday tools.",
+      "successes": "General-purpose scripts and everyday tools.",
+      "failures": "Specific challenges are still to be documented."
+    },
+    "colour": {
+      "project_name": "Colour",
+      "description": "My first TypeScript and React project.",
+      "successes": "My first TypeScript and React project.",
+      "failures": "Specific challenges are still to be documented."
+    },
+    "docker": {
+      "project_name": "Docker Compose",
+      "description": "Templates for Docker Compose projects.",
+      "successes": "Templates for Docker Compose projects.",
+      "failures": "Specific challenges are still to be documented."
+    },
+    "integrador": {
+      "project_name": "Interdisciplinary Project",
+      "description": "One of my interdisciplinary projects at Fatec.",
+      "successes": "One of my interdisciplinary projects at Fatec.",
+      "failures": "Specific challenges are still to be documented."
+    },
+    "pygame": {
+      "project_name": "Pygame Projects",
+      "description": "Games created while learning Python.",
+      "successes": "Games created while learning Python.",
+      "failures": "Specific challenges are still to be documented."
+    },
+    "html-css": {
+      "project_name": "HTML & CSS",
+      "description": "Handmade pages from my first months learning web development.",
+      "successes": "Handmade pages from my first months learning web development.",
+      "failures": "Specific challenges are still to be documented."
+    }
+  },
+  "notFoundTitle": "Page not found.",
+  "notFoundBody": "This address may have changed. Explore the projects to continue."
+}

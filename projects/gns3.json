@@ -1,0 +1,16 @@
+{
+  "slug": "gns3",
+  "type": "Secondary",
+  "project_name": "projects.gns3.project_name",
+  "description": "projects.gns3.description",
+  "technologies": [
+    "Python",
+    "Networking"
+  ],
+  "image_links": [],
+  "video_link": "",
+  "github_repo": "https://github.com/redlintles/gns3-gui-fork",
+  "successes": "projects.gns3.successes",
+  "project_link": "",
+  "failures": "projects.gns3.failures"
+}

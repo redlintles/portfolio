@@ -1,0 +1,16 @@
+{
+  "slug": "colour",
+  "type": "Secondary",
+  "project_name": "projects.colour.project_name",
+  "description": "projects.colour.description",
+  "technologies": [
+    "TypeScript",
+    "React"
+  ],
+  "image_links": [],
+  "video_link": "",
+  "github_repo": "https://github.com/redlintles/Colour",
+  "successes": "projects.colour.successes",
+  "project_link": "",
+  "failures": "projects.colour.failures"
+}
