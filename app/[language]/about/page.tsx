@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { dictionary, isLanguage } from "@/lib/content";
 
-/** Long-form biography uses only the owner's supplied history, translated locally. */
+/** Render the localized biography. */
 export default async function About({ params }: { params: Promise<{ language: string }> }) {
   const { language } = await params;
   if (!isLanguage(language)) notFound();

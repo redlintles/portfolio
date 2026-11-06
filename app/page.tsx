@@ -2,7 +2,7 @@ import Home from "./[language]/page";
 import { Header, Footer } from "@/components/shell";
 import { dictionary } from "@/lib/content";
 
-/** The domain entry renders the full Portuguese home rather than an intermediate gateway. */
+/** Render the Portuguese home at the domain entry. */
 export default function Entry() {
   const copy = dictionary("pt-BR");
   return (

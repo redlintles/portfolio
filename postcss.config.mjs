@@ -1,2 +1,2 @@
-// Tailwind 3 preserves the requested @tailwind and @apply authoring model.
+// Compile Tailwind directives and add vendor prefixes.
 export default { plugins: { tailwindcss: {}, autoprefixer: {} } };

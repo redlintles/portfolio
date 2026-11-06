@@ -16,7 +16,7 @@ export type Project = {
   description: string;
   technologies: string[];
   image_links: string[];
-  /** Conceptual artwork used only when no real screenshots are supplied. */
+  /** Fallback artwork for projects without screenshots. */
   illustration_link?: string;
   video_link: string;
   github_repo: string;

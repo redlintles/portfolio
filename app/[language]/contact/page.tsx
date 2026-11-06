@@ -3,7 +3,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { dictionary, isLanguage } from "@/lib/content";
 import site from "@/locale/site.json";
 
-/** Direct contact links avoid an unnecessary form service or collection of visitor data. */
+/** Render the contact channels configured in site.json. */
 export default async function Contact({ params }: { params: Promise<{ language: string }> }) {
   const { language } = await params;
   if (!isLanguage(language)) notFound();

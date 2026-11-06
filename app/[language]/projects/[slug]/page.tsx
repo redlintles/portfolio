@@ -9,7 +9,7 @@ export function generateStaticParams() {
 }
 export const dynamicParams = false;
 
-/** Details disclose publication status and show only supplied media. */
+/** Render project media, publication links, and documented outcomes. */
 export default async function ProjectPage({
   params,
 }: {
@@ -74,10 +74,12 @@ export default async function ProjectPage({
           <h2>{copy.successes}</h2>
           <p>{translate(copy, project.successes)}</p>
         </section>
-        <section>
-          <h2>{copy.failures}</h2>
-          <p>{translate(copy, project.failures)}</p>
-        </section>
+        {translate(copy, project.failures).trim() && (
+          <section>
+            <h2>{copy.failures}</h2>
+            <p>{translate(copy, project.failures)}</p>
+          </section>
+        )}
       </div>
     </article>
   );

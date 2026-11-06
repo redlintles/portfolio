@@ -1,10 +1,10 @@
 # Portfólio · João Paulo
 
-Portfólio estático em **Next.js 16 + React 19 + TypeScript + Tailwind CSS 3**. A versão 3 do Tailwind é intencional: preserva o formato solicitado com `@tailwind` e aliases BEM usando `@apply`. O build usa Webpack integrado ao Next.js, sem Vite nem dependência adicional de bundler. Essa opção também evita a necessidade de uma porta interna do Turbopack em ambientes restritos.
+Portfólio estático em **Next.js 16 + React 19 + TypeScript + Tailwind CSS 3**. Os estilos usam classes BEM e diretivas `@apply`. O build usa o Webpack integrado ao Next.js.
 
 ## Executar
 
-Use Node.js 22 LTS ou mais recente e npm.
+Use Node.js 22 ou 24 LTS e npm. Versões experimentais do Node.js não fazem parte da configuração validada.
 
 ```sh
 npm ci
@@ -42,13 +42,13 @@ Cada arquivo `projects/*.json` define exatamente um projeto. Copie um existente 
 }
 ```
 
-Os campos textuais contêm **chaves de tradução**, para cumprir a regra de manter textos em `locale/{language}.json`. Acrescente a entrada correspondente em `projects` nos três arquivos de idioma:
+Os campos textuais contêm **chaves de tradução** resolvidas em `locale/{language}.json`. Acrescente a entrada correspondente em `projects` nos três arquivos de idioma:
 
 ```json
 "meu-projeto": {
   "project_name": "Meu projeto",
   "description": "Descrição do projeto.",
-  "successes": "Resultados e aprendizados que você deseja apresentar.",
+  "successes": "Resultados e aprendizados do projeto.",
   "failures": "Dificuldades reais e próximos passos."
 }
 ```
@@ -57,7 +57,7 @@ Não adicione comentários ou vírgulas finais aos JSONs. `project_link` pode es
 
 ### Imagens e Base64
 
-`image_links` aceita URLs HTTPS, caminhos locais iniciados por `/` (arquivos em `public/`) e Data URLs raster completas, como `data:image/png;base64,...`. SVG em Data URL é recusado. Capturas ainda não foram fornecidas: os cartões usam composição gráfica, sem simular imagens do software, e os detalhes exibem um aviso. A primeira imagem é usada no cartão, e todas aparecem na galeria. Para acessibilidade mais específica, futuras alterações podem ampliar o schema com textos alternativos próprios por imagem; atualmente a galeria usa nome traduzido e número da captura.
+`image_links` aceita URLs HTTPS, caminhos locais iniciados por `/` (arquivos em `public/`) e Data URLs raster completas, como `data:image/png;base64,...`. SVG em Data URL é recusado. Projetos sem capturas usam `illustration_link`, quando configurado. Sem imagens ou ilustração, a galeria exibe um estado vazio. A primeira imagem é usada no cartão, e todas aparecem na galeria. Para acessibilidade mais específica, futuras alterações podem ampliar o schema com textos alternativos próprios por imagem; atualmente a galeria usa nome traduzido e número da captura.
 
 Base64 aumenta o tamanho do HTML e dos dados enviados ao navegador. Prefira imagens comprimidas quando possível. A foto genérica da Home fica localmente em `public/images/workspace.jpg`; sua fonte e licença estão em `locale/site.json` e `ASSETS.md`.
 
@@ -68,7 +68,7 @@ Base64 aumenta o tamanho do HTML e dos dados enviados ao navegador. Prefira imag
 - `projects/*.json`: projetos, tecnologias, mídias e links.
 - `app/globals.css`: estilos BEM com `@apply`, responsividade, foco visível e redução de movimento.
 
-As notas são autoavaliações. Preparação para LPIC-1 e estudos para CCNA não são apresentados como certificações obtidas. Os desafios não relatados ficaram explicitamente pendentes. O telefone e o e-mail fornecidos aparecem publicamente na página de contatos. O YouTube usa uma busca por Redlint porque o endereço exato do canal não foi fornecido; substitua `href` em `locale/site.json` pelo endereço direto.
+As notas das tecnologias são autoavaliações. A tradução de `failures` pode ser uma string vazia: nesse caso, a seção de desafios é omitida. Os canais de contato são configurados em `locale/site.json`.
 
 ## GitHub Pages
 

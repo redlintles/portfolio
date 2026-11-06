@@ -54,7 +54,7 @@
   "successes": "Logros y aprendizajes",
   "failures": "Desafíos y próximos pasos",
   "gallery": "Imágenes del proyecto",
-  "noImages": "Pronto se añadirán capturas del proyecto.",
+  "noImages": "No hay imágenes disponibles.",
   "video": "Vídeo del proyecto",
   "back": "Volver a los proyectos",
   "projectsTitle": "Proyectos y experimentos.",
@@ -110,67 +110,67 @@
       "project_name": "Inventario Fatec",
       "description": "Gestión de activos e inventario con aplicación para leer códigos de barras.",
       "successes": "Sistema de inventario desarrollado durante mis prácticas en Fatec, con aplicación web y lectura de códigos de barras en Kotlin.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     },
     "api-php": {
       "project_name": "API PHP",
       "description": "API para una empresa hipotética de materiales de construcción.",
       "successes": "API para una empresa hipotética de materiales de construcción.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     },
     "gns3": {
       "project_name": "GNS3 · Fork",
       "description": "Exploración de mejoras en topologías y desarrollo asistido por IA.",
       "successes": "Exploración de mejoras en topologías y desarrollo asistido por IA.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     },
     "textforge-node": {
       "project_name": "Textforge / Node.js",
       "description": "Bindings de Textforge para Node.js, en desarrollo.",
       "successes": "Bindings de Textforge para Node.js, en desarrollo.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     },
     "textforge-python": {
       "project_name": "Textforge / Python",
       "description": "Bindings de Textforge para Python, en desarrollo.",
       "successes": "Bindings de Textforge para Python, en desarrollo.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     },
     "scripts": {
       "project_name": "Scripts y Utilidades",
       "description": "Scripts y herramientas de uso general.",
       "successes": "Scripts y herramientas de uso general.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     },
     "colour": {
       "project_name": "Colour",
       "description": "Mi primer proyecto con TypeScript y React.",
       "successes": "Mi primer proyecto con TypeScript y React.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     },
     "docker": {
       "project_name": "Docker Compose",
       "description": "Plantillas para proyectos con Docker Compose.",
       "successes": "Plantillas para proyectos con Docker Compose.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     },
     "integrador": {
       "project_name": "Proyecto Integrador",
       "description": "Uno de mis proyectos integradores de Fatec.",
       "successes": "Uno de mis proyectos integradores de Fatec.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     },
     "pygame": {
       "project_name": "Pygame Projects",
       "description": "Juegos creados durante mis estudios de Python.",
       "successes": "Juegos creados durante mis estudios de Python.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     },
     "html-css": {
       "project_name": "HTML & CSS",
       "description": "Páginas hechas a mano durante mis primeros meses de desarrollo web.",
       "successes": "Páginas hechas a mano durante mis primeros meses de desarrollo web.",
-      "failures": "Los desafíos específicos aún están por documentar."
+      "failures": ""
     }
   },
   "notFoundTitle": "Página no encontrada.",

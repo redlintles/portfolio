@@ -10,10 +10,11 @@ function shape(value, prefix = "") {
 }
 
 /** Resolve a dot-separated translation key or fail with actionable context. */
-function resolve(copy, key) {
+function resolve(copy, key, allowEmpty = false) {
   let value = copy;
   for (const part of key.split(".")) value = value?.[part];
-  if (typeof value !== "string" || !value.trim()) throw new Error(`Missing translation: ${key}`);
+  if (typeof value !== "string" || (!allowEmpty && !value.trim()))
+    throw new Error(`Missing translation: ${key}`);
 }
 
 const locales = ["pt-BR", "en", "es"].map((language) =>
@@ -31,7 +32,7 @@ for (const file of fs.readdirSync("projects").filter((file) => file.endsWith(".j
   slugs.add(project.slug);
   for (const locale of locales) {
     for (const key of ["project_name", "description", "successes", "failures"])
-      resolve(locale, project[key]);
+      resolve(locale, project[key], key === "failures");
   }
 }
 console.log(`Validated ${slugs.size} projects and ${locales.length} languages.`);
