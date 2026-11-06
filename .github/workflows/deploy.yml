@@ -21,6 +21,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - run: npm run test:media-export
       - name: Configure repository base path
         env:
           REPOSITORY: ${{ github.event.repository.name }}

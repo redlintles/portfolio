@@ -3,16 +3,12 @@
   "type": "Secondary",
   "project_name": "projects.textforge-node.project_name",
   "description": "projects.textforge-node.description",
-  "technologies": [
-    "Rust",
-    "Node.js",
-    "TypeScript"
-  ],
+  "technologies": ["Rust", "Node.js", "TypeScript"],
   "image_links": [],
-  "video_link": "",
   "github_repo": "https://github.com/redlintles/textforge-node",
   "successes": "projects.textforge-node.successes",
   "project_link": "",
   "failures": "projects.textforge-node.failures",
-  "illustration_link": "/images/projects/bindings-node.svg"
+  "illustration_link": "/images/projects/bindings-node.svg",
+  "video_links": []
 }

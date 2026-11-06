@@ -39,23 +39,19 @@ export default async function ProjectPage({
             <FiArrowUpRight aria-hidden="true" />
           </a>
         )}
-        {project.video_link && (
-          <a className="button" href={project.video_link}>
-            {copy.video}
-            <FiArrowUpRight aria-hidden="true" />
-          </a>
-        )}
       </div>
       {!project.project_link && <p className="page__notice">{copy.offline}</p>}
       <section className="detail__gallery" aria-label={copy.gallery}>
         {project.image_links.length ? (
           project.image_links.map((image, index) => (
-            <img
-              key={`${index}-${image.slice(0, 30)}`}
-              src={mediaUrl(image)}
-              alt={`${translate(copy, project.project_name)} — ${copy.gallery} ${index + 1}`}
-              loading="lazy"
-            />
+            <figure className="detail__image" key={`${index}-${image.link.slice(0, 30)}`}>
+              <img
+                src={mediaUrl(image.link)}
+                alt={translate(copy, image.description)}
+                loading="lazy"
+              />
+              <figcaption>{translate(copy, image.description)}</figcaption>
+            </figure>
           ))
         ) : project.illustration_link ? (
           <figure className="detail__illustration">
@@ -69,6 +65,21 @@ export default async function ProjectPage({
           <p className="detail__placeholder">{copy.noImages}</p>
         )}
       </section>
+      {project.video_links.length > 0 && (
+        <section className="detail__videos" aria-labelledby="project-videos">
+          <h2 id="project-videos">{copy.video}</h2>
+          <ul className="detail__video-list">
+            {project.video_links.map((video, index) => (
+              <li key={`${index}-${video.link}`}>
+                <a className="button" href={mediaUrl(video.link)}>
+                  {translate(copy, video.description)}
+                  <FiArrowUpRight aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <div className="detail__columns">
         <section>
           <h2>{copy.successes}</h2>

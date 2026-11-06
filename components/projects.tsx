@@ -24,7 +24,7 @@ export function ProjectCard({
 }) {
   const text = projectCopy(copy, project);
   // Real screenshots take priority over the optional conceptual illustration.
-  const image = project.image_links[0] || project.illustration_link;
+  const image = project.image_links[0]?.link || project.illustration_link;
   const src = image?.startsWith("/") ? `${process.env.NEXT_PUBLIC_BASE_PATH || ""}${image}` : image;
   return (
     <article className={`project-card${featured ? " project-card--featured" : ""}`}>

@@ -3,14 +3,11 @@
   "type": "Secondary",
   "project_name": "projects.html-css.project_name",
   "description": "projects.html-css.description",
-  "technologies": [
-    "HTML",
-    "CSS"
-  ],
+  "technologies": ["HTML", "CSS"],
   "image_links": [],
-  "video_link": "",
   "github_repo": "https://github.com/redlintles/HTML-CSS",
   "successes": "projects.html-css.successes",
   "project_link": "",
-  "failures": "projects.html-css.failures"
+  "failures": "projects.html-css.failures",
+  "video_links": []
 }

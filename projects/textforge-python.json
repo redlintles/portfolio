@@ -3,15 +3,12 @@
   "type": "Secondary",
   "project_name": "projects.textforge-python.project_name",
   "description": "projects.textforge-python.description",
-  "technologies": [
-    "Rust",
-    "Python"
-  ],
+  "technologies": ["Rust", "Python"],
   "image_links": [],
-  "video_link": "",
   "github_repo": "https://github.com/redlintles/textforge-python",
   "successes": "projects.textforge-python.successes",
   "project_link": "",
   "failures": "projects.textforge-python.failures",
-  "illustration_link": "/images/projects/bindings-python.svg"
+  "illustration_link": "/images/projects/bindings-python.svg",
+  "video_links": []
 }

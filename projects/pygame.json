@@ -3,14 +3,11 @@
   "type": "Secondary",
   "project_name": "projects.pygame.project_name",
   "description": "projects.pygame.description",
-  "technologies": [
-    "Python",
-    "Pygame"
-  ],
+  "technologies": ["Python", "Pygame"],
   "image_links": [],
-  "video_link": "",
   "github_repo": "https://github.com/redlintles/Pygame-Projects",
   "successes": "projects.pygame.successes",
   "project_link": "",
-  "failures": "projects.pygame.failures"
+  "failures": "projects.pygame.failures",
+  "video_links": []
 }

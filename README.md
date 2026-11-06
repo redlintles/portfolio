@@ -33,8 +33,18 @@ Cada arquivo `projects/*.json` define exatamente um projeto. Copie um existente 
   "project_name": "projects.meu-projeto.project_name",
   "description": "projects.meu-projeto.description",
   "technologies": ["Rust"],
-  "image_links": ["/images/meu-projeto.png"],
-  "video_link": "",
+  "image_links": [
+    {
+      "link": "/images/meu-projeto.png",
+      "description": "projects.meu-projeto.media.overview"
+    }
+  ],
+  "video_links": [
+    {
+      "link": "https://example.com/demonstracao",
+      "description": "projects.meu-projeto.media.demo"
+    }
+  ],
   "github_repo": "https://github.com/redlintles/meu-projeto",
   "successes": "projects.meu-projeto.successes",
   "project_link": "",
@@ -49,15 +59,37 @@ Os campos textuais contêm **chaves de tradução** resolvidas em `locale/{langu
   "project_name": "Meu projeto",
   "description": "Descrição do projeto.",
   "successes": "Resultados e aprendizados do projeto.",
-  "failures": "Dificuldades reais e próximos passos."
+  "failures": "",
+  "media": {
+    "overview": "Visão geral do processamento de texto.",
+    "demo": "Demonstração de um pipeline."
+  }
 }
 ```
 
-Não adicione comentários ou vírgulas finais aos JSONs. `project_link` pode estar ausente ou vazio; nesse caso, a página informa que o projeto não está publicado. O link do Textforge aponta para sua biblioteca no crates.io. `video_link` é um link externo, sem embeds de terceiros.
+Não adicione comentários ou vírgulas finais aos JSONs. `project_link` pode estar ausente ou vazio; nesse caso, a página informa que o projeto não está publicado. O link do Textforge aponta para sua biblioteca no crates.io. `video_links` contém links para vídeos locais ou externos, sem embeds de terceiros. As duas listas de mídia são obrigatórias; use `[]` quando não houver assets.
 
 ### Imagens e Base64
 
-`image_links` aceita URLs HTTPS, caminhos locais iniciados por `/` (arquivos em `public/`) e Data URLs raster completas, como `data:image/png;base64,...`. SVG em Data URL é recusado. Projetos sem capturas usam `illustration_link`, quando configurado. Sem imagens ou ilustração, a galeria exibe um estado vazio. A primeira imagem é usada no cartão, e todas aparecem na galeria. Para acessibilidade mais específica, futuras alterações podem ampliar o schema com textos alternativos próprios por imagem; atualmente a galeria usa nome traduzido e número da captura.
+Cada item de `image_links` e `video_links` é um objeto com:
+
+- `link`: endereço do asset.
+- `description`: chave de tradução com uma frase curta sobre o asset, no namespace `projects.<slug>`.
+
+As descrições devem existir e ser não vazias nos três arquivos de idioma. Nas imagens, o texto traduzido é usado como `alt` e legenda; nos vídeos, como rótulo do link. A primeira imagem ilustra o cartão e todas aparecem na galeria na ordem da lista. Links locais recebem automaticamente o prefixo do GitHub Pages.
+
+Imagens aceitam HTTPS, caminhos locais iniciados por `/` (arquivos em `public/`) e Data URLs raster completas, como `data:image/png;base64,...`. SVG em Data URL é recusado. Vídeos aceitam HTTPS ou caminhos locais; Data URLs de vídeo não são suportadas. Projetos sem imagens usam `illustration_link`, quando configurado. Sem imagens ou ilustração, a galeria exibe um estado vazio.
+
+### Migração do formato anterior
+
+Esta mudança altera o contrato dos JSONs. Os 12 projetos incluídos já estão migrados.
+
+1. Troque cada string em `image_links` por `{ "link": "...", "description": "projects.<slug>.media.<identificador>" }`.
+2. Substitua `video_link` por `video_links`. Um vídeo passa a ser uma lista com um objeto; um valor vazio passa a `[]`.
+3. Adicione as descrições nas traduções de português, inglês e espanhol.
+4. Remova o campo antigo `video_link` e execute `npm run rebuild`.
+
+A validação rejeita o campo antigo, listas de strings, objetos incompletos, links inválidos e traduções ausentes ou vazias, indicando o campo a corrigir.
 
 Base64 aumenta o tamanho do HTML e dos dados enviados ao navegador. Prefira imagens comprimidas quando possível. A foto genérica da Home fica localmente em `public/images/workspace.jpg`; sua fonte e licença estão em `locale/site.json` e `ASSETS.md`.
 
@@ -87,12 +119,13 @@ Abra `http://localhost:3000/nome-do-repositorio/pt-BR/`. Imagens locais e navega
 
 ```sh
 npm test
+npm run test:media-export
 npm run build
 npm run check
 node scripts/verify-export.mjs
 ```
 
-Os testes verificam contratos de entrada e esquemas de URL. O build valida slugs únicos, traduções e estrutura dos JSONs antes de gerar páginas. O TypeScript usa modo estrito. A navegação, os filtros e as tecnologias têm operação por teclado; os destaques mantêm ações visíveis em telas sem hover.
+Os testes verificam contratos de entrada, esquemas de URL e resolução de traduções. `test:media-export` cria uma cópia temporária do projeto, adiciona múltiplas imagens e vídeos de teste e verifica o HTML real exportado nos três idiomas. Cobre legendas, textos alternativos, links de vídeo, Base64, prioridade sobre a ilustração e caminhos do GitHub Pages. A cópia é removida ao final; os JSONs do portfólio não são alterados. O build valida slugs únicos, traduções e estrutura dos JSONs antes de gerar páginas. O TypeScript usa modo estrito. A navegação, os filtros e as tecnologias têm operação por teclado; os destaques mantêm ações visíveis em telas sem hover.
 
 Se o build foi gerado com um prefixo, informe o mesmo `NEXT_PUBLIC_BASE_PATH` ao executar `scripts/verify-export.mjs`.
 

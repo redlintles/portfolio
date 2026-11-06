@@ -3,22 +3,29 @@ import path from "node:path";
 import pt from "@/locale/pt-BR.json";
 import en from "@/locale/en.json";
 import es from "@/locale/es.json";
-import { validateProject } from "./validation.mjs";
+import { validateProject, validateProjectTranslations } from "./validation.mjs";
 
 /** Supported languages are exported statically, without a translation service. */
 export const languages = ["pt-BR", "en", "es"] as const;
 export type Language = (typeof languages)[number];
 export type Dictionary = typeof pt;
+/** Asset location and localized caption shared by images and videos. */
+export type ProjectMedia = {
+  link: string;
+  description: string;
+};
+
+/** Project metadata loaded from the projects directory. */
 export type Project = {
   slug: string;
   type: "Primary" | "Secondary";
   project_name: string;
   description: string;
   technologies: string[];
-  image_links: string[];
+  image_links: ProjectMedia[];
   /** Fallback artwork for projects without screenshots. */
   illustration_link?: string;
-  video_link: string;
+  video_links: ProjectMedia[];
   github_repo: string;
   successes: string;
   project_link?: string;
@@ -56,6 +63,7 @@ export function projects(): Project[] {
     .map((file) => {
       const project: unknown = JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"));
       validateProject(project);
+      validateProjectTranslations(project, { "pt-BR": pt, en, es });
       return project as Project;
     });
 }

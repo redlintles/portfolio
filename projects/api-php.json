@@ -3,14 +3,12 @@
   "type": "Primary",
   "project_name": "projects.api-php.project_name",
   "description": "projects.api-php.description",
-  "technologies": [
-    "PHP"
-  ],
+  "technologies": ["PHP"],
   "image_links": [],
-  "video_link": "",
   "github_repo": "https://github.com/redlintles/api_php",
   "successes": "projects.api-php.successes",
   "project_link": "",
   "failures": "projects.api-php.failures",
-  "illustration_link": "/images/projects/api.svg"
+  "illustration_link": "/images/projects/api.svg",
+  "video_links": []
 }

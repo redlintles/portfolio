@@ -170,6 +170,7 @@
   .project-card__caption {
     @apply mb-3 text-[9px] uppercase tracking-widest text-white/50;
   }
+  .detail__image figcaption,
   .detail__illustration figcaption {
     @apply border-x border-b border-line/30 bg-panel px-5 py-3 text-xs text-white/60;
   }
@@ -295,6 +296,15 @@
   }
   .detail__placeholder {
     @apply flex min-h-52 items-center justify-center border border-dashed border-line/30 bg-panel p-8 text-center text-sm text-white/60;
+  }
+  .detail__videos {
+    @apply mb-10;
+  }
+  .detail__videos h2 {
+    @apply text-2xl;
+  }
+  .detail__video-list {
+    @apply mt-4 flex list-none flex-wrap gap-3 p-0;
   }
   .detail__columns {
     @apply grid gap-8 md:grid-cols-2;
