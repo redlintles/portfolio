@@ -1,5 +1,15 @@
 # Histórico de alterações
 
+## Pasta de assets para imagens
+
+- Nova pasta `public/assets/` para as imagens dos projetos.
+- `image_links[].link` aceita apenas o nome do arquivo (com subpastas opcionais); o caminho completo é montado como `/assets/<nome>` com o prefixo do GitHub Pages.
+- URLs HTTPS e Data URLs raster continuam aceitas. Caminhos iniciados por `/` deixam de ser aceitos em `image_links`; `illustration_link` e `video_links` não mudam.
+- O build e o modo `dev` falham quando o arquivo referenciado não existe.
+- `mediaUrl` foi movido de `lib/content.ts` para `lib/media.ts`, que pode ser importado por componentes cliente.
+
+Validação: testes unitários de nomes, caminhos e existência de arquivos, exportação com imagem em subpasta e nome com espaço, TypeScript, build com prefixo e integridade dos links exportados.
+
 ## Limpeza editorial
 
 - Comentários descrevem o comportamento do código, sem referências à solicitação de desenvolvimento.

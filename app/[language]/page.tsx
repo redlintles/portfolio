@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FiArrowDownRight, FiArrowUpRight } from "react-icons/fi";
-import { dictionary, isLanguage, projects, mediaUrl } from "@/lib/content";
+import { dictionary, isLanguage, projects } from "@/lib/content";
+import { mediaUrl } from "@/lib/media";
 import { ProjectCard } from "@/components/projects";
 import { Technologies } from "@/components/technologies";
 import site from "@/locale/site.json";

@@ -1,5 +1,9 @@
 import fs from "node:fs";
-import { validateProject, validateProjectTranslations } from "../lib/validation.mjs";
+import {
+  validateProject,
+  validateProjectAssets,
+  validateProjectTranslations,
+} from "../lib/validation.mjs";
 
 /** Walk locale objects without treating arrays as translated leaf strings. */
 function shape(value, prefix = "") {
@@ -26,5 +30,6 @@ for (const file of fs.readdirSync("projects").filter((file) => file.endsWith(".j
   if (slugs.has(project.slug)) throw new Error(`Duplicate slug: ${project.slug}`);
   slugs.add(project.slug);
   validateProjectTranslations(project, locales);
+  validateProjectAssets(project, "public");
 }
 console.log(`Validated ${slugs.size} projects and ${Object.keys(locales).length} languages.`);

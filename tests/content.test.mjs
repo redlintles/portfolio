@@ -1,10 +1,15 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { assetPath, isAssetName } from "../lib/assets.mjs";
 import {
   safeImage,
+  safeProjectImage,
   safeVideo,
   validateProject,
+  validateProjectAssets,
   validateProjectTranslations,
 } from "../lib/validation.mjs";
 
@@ -13,12 +18,12 @@ function projectFixture() {
   return JSON.parse(fs.readFileSync("projects/textforge.json", "utf8"));
 }
 
-/** A representative collection covers local, remote and Base64 image sources. */
+/** A representative collection covers asset-folder, remote and Base64 image sources. */
 function mediaFixture() {
   return {
     ...projectFixture(),
     image_links: [
-      { link: "/images/projects/textforge.svg", description: "projects.textforge.media.pipeline" },
+      { link: "textforge/pipeline.png", description: "projects.textforge.media.pipeline" },
       { link: "data:image/png;base64,aGVsbG8=", description: "projects.textforge.media.pipeline" },
       { link: "https://example.com/image.png", description: "projects.textforge.media.pipeline" },
     ],
@@ -149,4 +154,59 @@ test("empty challenge text is valid while required project copy cannot be blank"
   assert.doesNotThrow(() => validateProjectTranslations(mediaFixture(), locales));
   locales.en.projects.textforge.description = "";
   assert.throws(() => validateProjectTranslations(mediaFixture(), locales), /en.*description/);
+});
+
+test("asset names accept plain file names and subfolders only", () => {
+  for (const value of ["home.png", "textforge/home.webp", "Captura de tela.JPG", "logo.svg"]) {
+    assert.equal(isAssetName(value), true, value);
+  }
+  for (const value of [
+    "",
+    "/assets/home.png",
+    "../secret.png",
+    "textforge/../../home.png",
+    "folder//home.png",
+    "home",
+    "home.txt",
+    "C:\\home.png",
+    "https://example.com/home.png",
+    "data:image/png;base64,aGVsbG8=",
+    "home.png?x=1",
+    null,
+  ]) {
+    assert.equal(isAssetName(value), false, String(value));
+  }
+});
+
+test("asset paths join the assets folder and encode each segment", () => {
+  assert.equal(assetPath("home.png"), "/assets/home.png");
+  assert.equal(assetPath("textforge/tela inicial.png"), "/assets/textforge/tela%20inicial.png");
+});
+
+test("project images accept asset names, HTTPS and Base64 but not root paths", () => {
+  for (const value of ["home.png", "https://example.com/a.png", "data:image/png;base64,aGVsbG8="]) {
+    assert.equal(safeProjectImage(value), true, value);
+  }
+  for (const value of ["/images/a.png", "../a.png", "javascript:alert(1)"]) {
+    assert.equal(safeProjectImage(value), false, value);
+  }
+});
+
+test("asset validation requires the referenced file inside public/assets", () => {
+  const publicDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "portfolio-assets-"));
+  try {
+    fs.mkdirSync(path.join(publicDirectory, "assets/textforge"), { recursive: true });
+    fs.writeFileSync(path.join(publicDirectory, "assets/textforge/pipeline.png"), "fixture");
+    assert.doesNotThrow(() => validateProjectAssets(mediaFixture(), publicDirectory));
+    const missing = {
+      ...mediaFixture(),
+      image_links: [{ link: "absent.png", description: "projects.textforge.media.pipeline" }],
+    };
+    assert.throws(
+      () => validateProjectAssets(missing, publicDirectory),
+      /image_links\[0\].*public\/assets\/absent\.png/,
+    );
+  } finally {
+    fs.rmSync(publicDirectory, { recursive: true, force: true });
+  }
 });

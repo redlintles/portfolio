@@ -43,7 +43,7 @@ try {
   const projectFile = path.join(fixture, "projects/textforge.json");
   const project = JSON.parse(fs.readFileSync(projectFile, "utf8"));
   project.image_links = [
-    { link: "/images/projects/textforge.svg", description: "projects.textforge.media.pipeline" },
+    { link: "teste/pipeline final.svg", description: "projects.textforge.media.pipeline" },
     {
       link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jRZkAAAAASUVORK5CYII=",
       description: "projects.textforge.media.sample",
@@ -54,6 +54,12 @@ try {
     { link: "https://example.com/demo.mp4", description: "projects.textforge.media.external" },
   ];
   fs.writeFileSync(projectFile, JSON.stringify(project));
+  // Images are referenced by file name and resolved inside public/assets/.
+  fs.mkdirSync(path.join(fixture, "public/assets/teste"), { recursive: true });
+  fs.copyFileSync(
+    path.join(root, "public/images/projects/textforge.svg"),
+    path.join(fixture, "public/assets/teste/pipeline final.svg"),
+  );
   // The video is a link target only; no player or playback request is involved in this test.
   fs.writeFileSync(path.join(fixture, "public/demo.mp4"), "fixture");
   const captions = {
@@ -111,12 +117,12 @@ try {
     );
     const home = fs.readFileSync(path.join(fixture, `out/${language}/index.html`), "utf8");
     assert.ok(
-      home.includes('src="/media-test/images/projects/textforge.svg"'),
-      "Cards must use the first image object",
+      home.includes('src="/media-test/assets/teste/pipeline%20final.svg"'),
+      "Cards must resolve the first image inside the assets folder",
     );
   }
   console.log(
-    "Media export passed: multiple images/videos, translated captions, Base64, fallback priority and basePath.",
+    "Media export passed: asset-folder images, multiple videos, translated captions, Base64, fallback priority and basePath.",
   );
 } finally {
   fs.rmSync(fixture, { recursive: true, force: true });

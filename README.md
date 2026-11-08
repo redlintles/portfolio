@@ -35,7 +35,7 @@ Cada arquivo `projects/*.json` define exatamente um projeto. Copie um existente 
   "technologies": ["Rust"],
   "image_links": [
     {
-      "link": "/images/meu-projeto.png",
+      "link": "meu-projeto/tela-inicial.png",
       "description": "projects.meu-projeto.media.overview"
     }
   ],
@@ -78,7 +78,13 @@ Cada item de `image_links` e `video_links` é um objeto com:
 
 As descrições devem existir e ser não vazias nos três arquivos de idioma. Nas imagens, o texto traduzido é usado como `alt` e legenda; nos vídeos, como rótulo do link. A primeira imagem ilustra o cartão e todas aparecem na galeria na ordem da lista. Links locais recebem automaticamente o prefixo do GitHub Pages.
 
-Imagens aceitam HTTPS, caminhos locais iniciados por `/` (arquivos em `public/`) e Data URLs raster completas, como `data:image/png;base64,...`. SVG em Data URL é recusado. Vídeos aceitam HTTPS ou caminhos locais; Data URLs de vídeo não são suportadas. Projetos sem imagens usam `illustration_link`, quando configurado. Sem imagens ou ilustração, a galeria exibe um estado vazio.
+Imagens aceitam três formatos:
+
+- **Nome de arquivo** (recomendado): coloque a imagem em `public/assets/` e escreva no JSON só o nome, como `tela.png`. Subpastas são permitidas para organizar, como `meu-projeto/tela.png`. O projeto junta o nome com `/assets/` e acrescenta o prefixo do GitHub Pages. Espaços e acentos são aceitos. Extensões válidas: `png`, `jpg`, `jpeg`, `webp`, `gif`, `avif` e `svg`.
+- **URL HTTPS** externa, usada sem alteração.
+- **Data URL raster** completa, como `data:image/png;base64,...`.
+
+Caminhos iniciados por `/`, `..` e barras invertidas são recusados em `image_links`. O build e o modo `dev` falham, indicando o campo, quando um nome de arquivo não existe em `public/assets/`. SVG em Data URL é recusado. Vídeos aceitam HTTPS ou caminhos locais; Data URLs de vídeo não são suportadas. Projetos sem imagens usam `illustration_link`, quando configurado. Sem imagens ou ilustração, a galeria exibe um estado vazio.
 
 ### Migração do formato anterior
 
@@ -98,6 +104,7 @@ Base64 aumenta o tamanho do HTML e dos dados enviados ao navegador. Prefira imag
 - `locale/pt-BR.json`, `locale/en.json`, `locale/es.json`: todos os textos traduzidos, biografia e qualificações.
 - `locale/site.json`: contatos, notas das tecnologias e referência da fotografia.
 - `projects/*.json`: projetos, tecnologias, mídias e links.
+- `public/assets/`: imagens dos projetos, referenciadas pelo nome em `image_links`.
 - `app/globals.css`: estilos BEM com `@apply`, responsividade, foco visível e redução de movimento.
 
 As notas das tecnologias são autoavaliações. A tradução de `failures` pode ser uma string vazia: nesse caso, a seção de desafios é omitida. Os canais de contato são configurados em `locale/site.json`.

@@ -3,7 +3,11 @@ import path from "node:path";
 import pt from "@/locale/pt-BR.json";
 import en from "@/locale/en.json";
 import es from "@/locale/es.json";
-import { validateProject, validateProjectTranslations } from "./validation.mjs";
+import {
+  validateProject,
+  validateProjectAssets,
+  validateProjectTranslations,
+} from "./validation.mjs";
 
 /** Supported languages are exported statically, without a translation service. */
 export const languages = ["pt-BR", "en", "es"] as const;
@@ -11,6 +15,7 @@ export type Language = (typeof languages)[number];
 export type Dictionary = typeof pt;
 /** Asset location and localized caption shared by images and videos. */
 export type ProjectMedia = {
+  /** Images: file name in `public/assets/`, HTTPS URL or Data URL. Videos: path or HTTPS URL. */
   link: string;
   description: string;
 };
@@ -64,11 +69,7 @@ export function projects(): Project[] {
       const project: unknown = JSON.parse(fs.readFileSync(path.join(directory, file), "utf8"));
       validateProject(project);
       validateProjectTranslations(project, { "pt-BR": pt, en, es });
+      validateProjectAssets(project, path.join(process.cwd(), "public"));
       return project as Project;
     });
-}
-
-/** Prefix local media for repository-based Pages while preserving remote and data URLs. */
-export function mediaUrl(value: string): string {
-  return value.startsWith("/") ? `${process.env.NEXT_PUBLIC_BASE_PATH || ""}${value}` : value;
 }

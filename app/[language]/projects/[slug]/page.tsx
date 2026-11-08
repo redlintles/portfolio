@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FiArrowUpRight } from "react-icons/fi";
-import { dictionary, isLanguage, projects, translate, mediaUrl } from "@/lib/content";
+import { dictionary, isLanguage, projects, translate } from "@/lib/content";
+import { mediaUrl, projectImageUrl } from "@/lib/media";
 
 /** Each JSON creates a detail page in every language during static generation. */
 export function generateStaticParams() {
@@ -46,7 +47,7 @@ export default async function ProjectPage({
           project.image_links.map((image, index) => (
             <figure className="detail__image" key={`${index}-${image.link.slice(0, 30)}`}>
               <img
-                src={mediaUrl(image.link)}
+                src={projectImageUrl(image.link)}
                 alt={translate(copy, image.description)}
                 loading="lazy"
               />
