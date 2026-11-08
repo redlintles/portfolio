@@ -1,5 +1,11 @@
 # Histórico de alterações
 
+## Erros 500 no servidor de desenvolvimento
+
+- `next.config.ts` aplica `output: "export"` apenas fora do `next dev`. No modo de exportação, o servidor de desenvolvimento respondia endereços inexistentes (`/home/`, `/favicon.ico`) com erro 500 em vez de 404.
+- `scripts/check-node.mjs` interrompe `dev` e `build` em versões do Node.js fora de 22 a 26. No Node.js 27, os cabeçalhos das requisições não têm `hasOwnProperty`, que o Next.js 16 usa, e toda página retorna 500.
+- `engines` passou a `>=22.0.0 <27.0.0`; `.nvmrc` indica a versão 24.
+
 ## Português como idioma padrão
 
 - Endereços sem prefixo de idioma (`/about/`, `/projects/`, `/contact/`, `/projects/<slug>/`) deixavam de existir e retornavam erro 500 no modo `dev`; agora exibem as páginas em português.

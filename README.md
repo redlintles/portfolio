@@ -4,7 +4,7 @@ Portfólio estático em **Next.js 16 + React 19 + TypeScript + Tailwind CSS 3**.
 
 ## Executar
 
-Use Node.js 22 ou 24 LTS e npm. Versões experimentais do Node.js não fazem parte da configuração validada.
+Use Node.js LTS de 22 a 26 e npm (o arquivo `.nvmrc` indica a 24 para quem usa `nvm`). O Node.js 27 não é compatível com o Next.js 16: toda requisição falha com `headers.hasOwnProperty is not a function`. Por isso, `npm run dev` e `npm run build` verificam a versão antes de começar e param com uma mensagem clara fora dessa faixa.
 
 ```sh
 npm ci
@@ -20,7 +20,7 @@ npm run rebuild
 npm run preview
 ```
 
-`rebuild` valida conteúdo e gera todo o site em `out/`. Não é necessário modificar código para editar textos ou cadastrar projetos. O modo `dev` é adequado ao desenvolvimento; após alterações em arquivos lidos do disco, atualize a página. No site publicado, as alterações só aparecem depois de um novo build/deploy.
+`rebuild` valida conteúdo e gera todo o site em `out/`. Não é necessário modificar código para editar textos ou cadastrar projetos. O modo `dev` é adequado ao desenvolvimento; após alterações em arquivos lidos do disco, atualize a página. Ele roda sem a exportação estática, para que endereços inexistentes mostrem a página 404 em vez de erro 500; o `build` continua aplicando todas as regras da exportação. No site publicado, as alterações só aparecem depois de um novo build/deploy.
 
 ## Projetos
 
