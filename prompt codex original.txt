@@ -1,0 +1,164 @@
+Eu gostaria de um projeto de portifolio para exibir meus outros projetos. Ele deve ser escrito em Nextjs(SSG) recente+Typescript+Tailwind CSS, usando bibliotecas simples e sendo construído com o Next para ser hospedado no github pages.
+
+Sobre os projetos, gostaria de poder configurar quais projetos são exibidos através de um JSON lido na raiz do projeto dentro do diretório "projects".
+
+Esse diretório teria JSONs, cada um especifica um projeto por arquivo, a estrutura do JSON segue como abaixo. 
+
+Projetos:
+
+{
+	type: "" // Primary or secondary
+	project_name: "",
+	description: "",
+	technologies: ["...", "...", "..."],
+	image_links: [
+		"...",
+		"...",
+	]
+	video_link: ""
+	github_repo: "",
+	successes: "",
+	project_link: "", // Opcional, se não existir, deve aparecer numa paǵina de detalhes que o projeto não está em lugar nenhum no momento. 
+	failures: "",
+}
+
+
+
+Sobre as cores eu gostaria que a Cor primária fosse #101010, e a cor secundária seria a #222222 com bordas finas nos elementos de cor #CCCCCC, e texto branco Eu não gosto de formas redondas e odeio temas claros, prefiro um estilo baseado em retângulos de diferentes tamanhos, margens, paddings, etc. Prefiro fontes helvetica ou sans-serif. 
+
+Utilize técnicas de desenvolvimento front-end moderno, eu quero uma página clean e bem feita. com código bem documentado. Com imagens sobre tecnologias, computadores etc, 
+
+Regras de ouro:
+
+1- Deve pedir aprovação para a inclusão de novas dependências.
+2- Não inserir código que possa gerar bugs. 
+3- O código deve ser bem documentado e testado, com cada definição tendo comentários explicando o que elas fazem, além disso, todo o código deve ser escrito respeitando regras de indentação e estilo profissionais, tendo em mente a revisão humana. seguindo príncipios como KISS. 
+4- Evite usar recursos obscuros da linguagem ou das tecnologias usadas no projeto, use apenas o básico na hora de escrever o código. 
+5- Sobre o tailwind, é proibido colocar uma lista enorme de classes de estilo no meio da marcação, os estilos devem ser especificados num arquivo a parte sob classes CSS que servem de alias através da diretiva @apply, aquele clássico arquivo com @tailwind base, @tailwind components, etc.
+6- Toda a estilização deve ser feita utilizando classes que seguem a convenção BEM em sua nomenclatura.
+7- Ao buscar por imagens para ilustrar o projeto, busque por imagens livres de copyright, bonitas, e etc. teremos dois tipos de imagens aqui, imagens genéricas sobre tecnologia, e imagens dos projetos em execução.
+8- O Layout deve ser responsivo. 
+9- Nenhum texto poderá ser hardcoded, textos da página devem ficar em um arquivo JSON consultado pelo projeto em locale/{language}. 
+10- Html Semântico deve ser usado nos elementos corretamente. 
+11- Caso haja dúvidas, faça perguntas para o desenvolvedor responder ao invés de fazer suposições. 
+
+O projeto seria composto por 4 tipos de páginas básicas, uma página Home principal, uma paǵina de contatos, e uma página dedicada a exibição de cada projeto. Além disso, devem suportar troca de idiomas entre português, inglês e espanhol.
+
+A página principal seria composta por algumas seções(o modelo abaixo pode ser alterado, serve apenas como referência).
+
+
+1- O cabeçalho(header)
+2- Uma seção about com uma descrição sobre mim
+3- Uma seção com elementos grandes e texto invisível que surge via hover, com um botão transparente com bordas claras e texto claro que recebe um fill de branco com o texto mudando para preto, o click nesse botão leve pra página de detalhes do projeto, nessa seção, serão exibidos apenas projetos primários.
+4- Uma seção de tecnologias. ícones pequenos representando cada uma delas, e logo abaixo um elemento contendo um texto e uma classificação de 1 a 5 apresentada em forma de estrelas, que muda com o hover no ícone das tecnologias. 
+5- Uma seção com um grid estilo Metro UI monocromático para apresentar projetos secundários.
+6- Uma seção para apresentar cursos e qualificações, 
+3- O Footer(footer)
+
+Utilize imagens de tecnologia que combinem com a página, sem direitos de copyright
+
+
+Sobre a estrutura geral das páginas, Um container grande(usando <main>) centralizado horizontalmente na página serviria para abrigar todos os elementos.
+
+Dado o fato de que o projeto seria sobre mim eu gostaria de deixar aqui uma descrição sobre mim:
+
+"""
+
+Eu sou João Paulo de amorim silva, tenho 22 anos, formado em Desenvolvimento de Software Multiplataforma pela Fatec Cotia, estudo programação desde antes do ensino médio, mas passei a focar nos estudos em TI durante a pandemia.
+
+Minha primeira linguagem de programação foi o Python mas já tinha demonstrado interesse anos antes quando tentei aprender Lua para criar um jogo no Roblox, a única que conhecia na época, através das aulas de um antigo e inativo canal do youtube chamado Ignorância Zero, avancei muito nos conceitos básicos, meu objetivo inicial era criar jogos, e criei alguns em Pygame na época, mas quando comecei a estudar Django, me deparei com uma barreira enorme e um monte de conceitos novos, HTML, CSS, Frameworks, Javascript, Builds de projetos, bibliotecas externas, repositórios, git, etc. aí parei temporariamente meus estudos em Python com o objetivo de estudar esses outros conceitos.
+
+A partir daí, passei a usar o Python como uma linguagem utilitária, para escrever scripts de uso geral, ferramentas de linha de comando, testes de programação, etc.
+
+Contudo, me apaixonei pelas diversas outras áreas da TI, começando por desenvolvimento Web, Redes, Deploy, devops, Linux, etc.
+
+Quando comecei a faculdade, aprendi muita coisa nova. Tive o meu primeiro contato com Linux CentoOS, e depois, mudei meu computador pessoal para Ubuntu para estudar o Linux mais de perto, além disso, aprendi o básico de diversas outras linguagens no meio do caminho, Java, PHP, Kotlin, C, etc. bem como outras ferramentas importantes para o desenvolvimento, como Git, Docker, Linux, Aws, Azure, entre outros.
+
+Me interessei muito pelo Linux nesse caminho, a ponto de estar mirando em certificações sobre o assunto da LPI, mais especificamente a LPIC-1. estudei muito sobre o sistema, como ele lida com arquivos, shell, configuração de servidores de e-mail como o postfix, DHCP, Nginx, Apache, Firewalls, coordenação de várias VMs em laboratórios, Ansible, Terraform e Vagrant. além de estudar várias distros e ecossistemas, Ubuntu, RHEL, CentOS, Alpine, Alma Linux, Fedora, Arch Linux,Mint entre muitos outros.
+
+Depois comecei um canal no youtube chamado Redlint, atualmente inativo, onde eu publicava shorts cujo objetivo era explicar um conceito da área de TI em até 3 minutos de forma simples, direta e sem enrolação. lá publiquei mais de 150 shorts acessíveis explicando dezenas de termos diferentes em cada um dos vídeos.
+
+Durante esse tempo, também acumulei certificados em mais de 15 cursos online na área, feitos especialmente na Udemy, os quais usei como gancho para estudar diversos assuntos. Depois de um certo ponto, passei a fazer os cursos diretamente em inglês pois já não encontrava mais o material que eu desejava em PT-BR. Alguns dos meus instrutores durante esse curso Foram Imran Afzal,David Bombal, Matheus Batisti e Maximilian Schwarzmuller. 
+
+Esses cursos ensinavam assuntos como Tailwind CSS, SASS(css), Node.js, Docker, Linux, Inglês, React, Bootstrap 5, Typescript, etc.
+
+Também depois de um tempo passei a me interessar por programação de baixo nível, pois sempre me sobrava uma pergunta de "como isso funciona" na minha cabeça, portanto, passei a estudar Rust também, uma linguagem que depois de um tempo se tornou minha favorita. nela Criei um projeto chamado textforge, uma mini-linguagem de programação para processamento de texto em lote através de pipelines simples e descritivos. atualmente publicada como biblioteca no crates.io com bindings para python e Node.js ainda em fase de desenvolvimento, ferramentas de linha de comando e desenvolvimento.
+
+Também me interessei muito por contribuição open-source, tanto que recentemente, enquanto estudava redes para a certificação CCNA, me deparei com o fato de passar muita raiva com o quão difícil era editar topologias num software chamado GNS3, combinando isso ao fato de que eu já queria testar uma ideia de desenvolvimento centrado em modelos de linguagem generativos, criei um fork do projeto, onde através de especificações detalhadas de novas funcionalidades que eu gostaria de ver no projeto, implementei vários recursos interessantes no projeto através do uso do Codex. como zoom direcionado pelo mouse, redimensionamento de imagens importadas, containers para agrupar dispositivos, edição de texto e recursos de tipografia básicos e o desenho de formas geométricas baseado em editores gráficos.
+
+Esse projeto foi interessante para aprender a lidar com o desenvolvimento na era da IA e a ver através de outra perspectiva, escrevendo prompts detalhados com mudanças incrementais, revisando o código, pedindo correções, regras de ouro, de fato, usando a IA como um funcionário e atuando como um gestor de projeto orquestrando e desenvolvendo pipelines de desenvolvimento de código.
+
+Além disso, também venho trabalhando num RFC para a linguagem Rust, que visa implementar "partial impl blocks" para melhorar a organização e versatilidade do código Rust.
+
+Recentemente acabei de terminar um projeto de estágio que visava construir um sistema de gestão de ativos e inventário para minha faculdade, baseado em Typescript, NestJS e React, com aplicativo mobile para leitura de código de barras feito em Kotlin. 
+
+Não só isso, mais ao longo do curso e os estudos em paralelo, também aprendi muito sobre como funciona o desenvolvimento de um projeto no nível empresarial, versionamento, documentação, testes, deploy, debug, compatibilidade, diagramação, etc. utilizando de ferramentas como Jest, Thunderbird, Docker, Kubernetes, Linux, AWS, Cargo doc, Cargo test, Valgrind, UML, Github Actions, gestão de tokens e permissões, cibersegurança etc.
+
+"""
+
+Alguns Links úteis dos meus projetos:
+
+Estagio Fatec: https://github.com/redlintles/projeto_estagio_inventario_fatec
+Binding do textforge para node.js: https://github.com/redlintles/textforge-node
+Binding do textforge para python: https://github.com/redlintles/textforge-python
+Código do núcleo do textforge em Rust: https://github.com/redlintles/textforge
+Fork do GNS3: https://github.com/redlintles/gns3-gui-fork
+Scripts Utilitários que crio usando python: https://github.com/redlintles/bash-scripts
+Meu primeiro projeto em Typescript e React: https://github.com/redlintles/Colour
+API para um site de uma empresa hipotética de materiais de construção escrito em PHP: https://github.com/redlintles/api_php
+Templates para projetos baseados em Docker compose: https://github.com/redlintles/docker-compose-templates
+Um dos projetos integradores do meu curso na Fatec: https://github.com/redlintles/projeto-integrador
+Jogos em Pygame que fiz: https://github.com/redlintles/Pygame-Projects
+Páginas em HTML + CSS que fiz a mão durante meus primeiros meses estudando a àrea: https://github.com/redlintles/HTML-CSS
+
+Lhe restou alguma dúvida que o impediria de começar o desenvolvimento? se sim, liste-as que eu as responderei como puder no próximo prompt. se não houver dúvida restante, aguarde um "ok" antes de começar. 
+
+1- Next.JS em tudo
+2- Sobre as dependências, aceito todas, para a inserção de Ícones, utilize React-icons por exemplo. 
+3- Sobre os tipos de página, na verdade são 5 ao invés de 4, uma para detalhes sobre cada projeto e uma para mostrar todos os projetos
+4- Sobre o contato, O canal no youtube Redlint, https://www.linkedin.com/in/jo%C3%A3o-paulo-396302262/, e o email joaopaulo2112004@gmail.com, mais o número de telefone (11) 95892-3093 
+5- Sobre projetos, eu gostaria que o Textforge e o projeto do inventário na fatec ganhassem destaque especial, bem como a API-PHP
+6- Sim, seria extremamente importante isso, também deixe um script que permita reconstruir o projeto quantas vezes forem necessárias assim que eu alterar os JSONs. 
+7- Sobre as estrelas, me considero nota 5 em Rust, Javascript(Typescript), Linux e Python, nota 3 em PHP, Java e C, Nota 4 em Docker, Nuvem e IA, e em tecnologias satélites, a maioria nota 3.5 ou acima. 
+8- Sobre as imagens, algumas das capturas serão DataUrls em Base64 que eu colocarei no JSON para ilustrar o projeto. e aceito material licenciado desde que o fim para qual irei usá-lo esteja atendido nas exigências. 
+9- Será em redlintles.github.io/nome-do-repositorio/{links da página}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

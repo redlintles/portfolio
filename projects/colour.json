@@ -2,12 +2,26 @@
   "slug": "colour",
   "type": "Secondary",
   "project_name": "projects.colour.project_name",
-  "description": "projects.colour.description",
-  "technologies": ["TypeScript", "React"],
-  "image_links": [],
+  "description": "Um gestor de cores para web designers escolherem paletas, gerarem gradientes e converter cores em formatos distintos feito em React + Typescript",
+  "technologies": ["TypeScript", "React", "Html Canvas"],
+  "image_links": [
+    { "link": "", "description": "Home(Versão antiga)" },
+    {
+      "link": "https://redlintles.github.io/Colour/converter",
+      "description": "Conversor de cores(Versão antiga)"
+    },
+    {
+      "link": "https://redlintles.github.io/Colour/gradgen",
+      "description": "Gerador de degradês(Versão antiga)"
+    },
+    {
+      "link": "https://redlintles.github.io/Colour/converter",
+      "description": "Gerador de paleta de cores(Versão antiga)"
+    }
+  ],
   "github_repo": "https://github.com/redlintles/Colour",
-  "successes": "projects.colour.successes",
-  "project_link": "",
+  "successes": "Implementação do zero de um color picker através do HTML Canvas, ",
+  "project_link": "https://redlintles.github.io/Colour/",
   "failures": "projects.colour.failures",
   "video_links": []
 }
