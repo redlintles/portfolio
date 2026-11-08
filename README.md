@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Abra `http://localhost:3000/pt-BR/`. Há cinco tipos de página em português, inglês e espanhol: início, sobre, contatos, índice de projetos e detalhes. A raiz também mostra a Home em português.
+Abra `http://localhost:3000/pt-BR/`. Há cinco tipos de página em português, inglês e espanhol: início, sobre, contatos, índice de projetos e detalhes. O português é o idioma padrão: endereços sem prefixo de idioma (`/`, `/about/`, `/projects/`, `/contact/` e `/projects/<slug>/`) exibem as páginas em português. Elas ficam em `app/(default)/`, um grupo de rotas que reaproveita as páginas de `app/[language]/` e não acrescenta segmento à URL.
 
 ## Reconstruir após editar JSON
 

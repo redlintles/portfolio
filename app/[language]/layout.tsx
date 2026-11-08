@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
-import { Header, Footer } from "@/components/shell";
-import { dictionary, isLanguage, languages } from "@/lib/content";
+import { SiteFrame } from "@/components/site-frame";
+import { isLanguage, languages, siteMetadata } from "@/lib/content";
 
 /** Prebuild all supported language branches and reject unknown runtime parameters. */
 export function generateStaticParams() {
@@ -13,14 +13,10 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: { params: Promise<{ language: string }> }) {
   const { language } = await params;
   if (!isLanguage(language)) notFound();
-  const copy = dictionary(language);
-  return {
-    title: { default: `${copy.name} · ${copy.portfolio}`, template: `%s · ${copy.name}` },
-    description: copy.heroBody,
-  };
+  return siteMetadata(language);
 }
 
-/** Shared semantic frame places all main page content inside a centered container. */
+/** Wrap every localized page in the shared header, main container and footer. */
 export default async function LanguageLayout({
   children,
   params,
@@ -30,17 +26,5 @@ export default async function LanguageLayout({
 }) {
   const { language } = await params;
   if (!isLanguage(language)) notFound();
-  const copy = dictionary(language);
-  return (
-    <div lang={language} className="site">
-      <a className="accessibility__skip" href="#content">
-        {copy.skip}
-      </a>
-      <Header language={language} copy={copy} />
-      <main id="content" className="main">
-        {children}
-      </main>
-      <Footer language={language} copy={copy} />
-    </div>
-  );
+  return <SiteFrame language={language}>{children}</SiteFrame>;
 }

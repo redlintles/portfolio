@@ -12,6 +12,8 @@ import {
 /** Supported languages are exported statically, without a translation service. */
 export const languages = ["pt-BR", "en", "es"] as const;
 export type Language = (typeof languages)[number];
+/** Language served by addresses without a language prefix, such as `/` or `/projects/`. */
+export const defaultLanguage: Language = "pt-BR";
 export type Dictionary = typeof pt;
 /** Asset location and localized caption shared by images and videos. */
 export type ProjectMedia = {
@@ -45,6 +47,15 @@ export function isLanguage(value: string): value is Language {
 /** Return a complete local dictionary with matching structure in each language. */
 export function dictionary(language: Language): Dictionary {
   return { "pt-BR": pt, en, es }[language];
+}
+
+/** Page title template and description for every page of one language. */
+export function siteMetadata(language: Language) {
+  const copy = dictionary(language);
+  return {
+    title: { default: `${copy.name} · ${copy.portfolio}`, template: `%s · ${copy.name}` },
+    description: copy.heroBody,
+  };
 }
 
 /** Resolve a locale key; plain content is intentionally disallowed by validation. */

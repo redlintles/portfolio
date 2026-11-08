@@ -1,5 +1,12 @@
 # Histórico de alterações
 
+## Português como idioma padrão
+
+- Endereços sem prefixo de idioma (`/about/`, `/projects/`, `/contact/`, `/projects/<slug>/`) deixavam de existir e retornavam erro 500 no modo `dev`; agora exibem as páginas em português.
+- As rotas ficam no grupo `app/(default)/`, que reaproveita as páginas de `app/[language]/`. A antiga `app/page.tsx` passou para esse grupo.
+- O cabeçalho reconhece essas rotas: destaca o item atual do menu e mantém a página ao trocar de idioma.
+- `SiteFrame` (`components/site-frame.tsx`) e `siteMetadata` (`lib/content.ts`) concentram a moldura e os metadados compartilhados pelas duas árvores de rotas.
+
 ## Galeria na página de detalhes
 
 - Nova seção Galeria (`components/gallery.tsx`): imagens num grid de quadros 16:9 fixos, com legenda revelada no hover ou foco do teclado e sempre visível em telas de toque.

@@ -16,8 +16,9 @@ export function Header({ language, copy }: { language: Language; copy: Dictionar
   }, [language]);
   const routes = ["", "/about", "/projects", "/contact"];
   const parts = pathname.split("/").filter(Boolean);
+  // Page path without the language segment; unprefixed addresses use the default language.
   const languageIndex = parts.indexOf(language);
-  const suffix = languageIndex >= 0 ? parts.slice(languageIndex + 1).join("/") : "";
+  const suffix = languageIndex >= 0 ? parts.slice(languageIndex + 1).join("/") : parts.join("/");
   return (
     <header className="header">
       <Link href={`/${language}/`} className="header__brand" aria-label={copy.name}>
@@ -28,9 +29,7 @@ export function Header({ language, copy }: { language: Language; copy: Dictionar
         {routes.map((route, index) => (
           <Link
             className="header__link"
-            aria-current={
-              pathname.replace(/\/$/, "") === `/${language}${route}` ? "page" : undefined
-            }
+            aria-current={(suffix ? `/${suffix}` : "") === route ? "page" : undefined}
             href={`/${language}${route}/`}
             key={route}
           >
