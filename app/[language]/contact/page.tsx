@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { FiArrowUpRight } from "react-icons/fi";
 import { dictionary, isLanguage } from "@/lib/content";
 import site from "@/locale/site.json";
+import { ExternalLink } from "@/components/external-link";
 
 /** Render the contact channels configured in site.json. */
 export default async function Contact({ params }: { params: Promise<{ language: string }> }) {
@@ -15,11 +16,16 @@ export default async function Contact({ params }: { params: Promise<{ language: 
       <p className="page__intro">{copy.contactBody}</p>
       <div className="contacts">
         {site.contacts.map((contact, index) => (
-          <a className="contacts__item" href={contact.href} key={contact.href}>
+          <ExternalLink
+            className="contacts__item"
+            href={contact.href}
+            newTabLabel={copy.newTab}
+            key={contact.href}
+          >
             <span className="contacts__label">{copy.contactLabels[index]}</span>
             <span className="contacts__value">{contact.value}</span>
             <FiArrowUpRight aria-hidden="true" />
-          </a>
+          </ExternalLink>
         ))}
       </div>
     </section>

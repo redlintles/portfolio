@@ -50,6 +50,7 @@
   "footer": "Hecho con intención. Construido con Next.js.",
   "source": "Código en GitHub",
   "live": "Visitar proyecto",
+  "newTab": "(se abre en una pestaña nueva)",
   "offline": "Este proyecto no está publicado en un sitio o servicio actualmente.",
   "successes": "Logros y aprendizajes",
   "failures": "Desafíos y próximos pasos",

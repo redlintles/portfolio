@@ -1,5 +1,11 @@
 # Histórico de alterações
 
+## Links externos em nova guia
+
+- Novo componente `ExternalLink` (`components/external-link.tsx`): links para fora do portfólio abrem em nova guia com `rel="noopener noreferrer"` e um aviso oculto para leitores de tela (chave de idioma `newTab`).
+- Aplicado em "Código no GitHub", "Acessar projeto", contatos, crédito da foto da Home, GitHub do rodapé e link alternativo dos vídeos.
+- Links `mailto:` e `tel:` continuam abrindo no aplicativo correspondente, sem nova guia.
+
 ## Erros 500 no servidor de desenvolvimento
 
 - `next.config.ts` aplica `output: "export"` apenas fora do `next dev`. No modo de exportação, o servidor de desenvolvimento respondia endereços inexistentes (`/home/`, `/favicon.ico`) com erro 500 em vez de 404.

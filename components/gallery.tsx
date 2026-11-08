@@ -1,6 +1,7 @@
 import type { Dictionary, Project } from "@/lib/content";
 import { translate } from "@/lib/content";
 import { mediaUrl, projectMediaUrl } from "@/lib/media";
+import { ExternalLink } from "@/components/external-link";
 
 /**
  * Project gallery for the detail page: screenshots in a fixed-size grid with the caption
@@ -79,7 +80,9 @@ export function ProjectGallery({ project, copy }: { project: Project; copy: Dict
                   <figure className="gallery__video">
                     <video className="gallery__player" src={source} controls preload="metadata">
                       {/* Shown only by browsers that cannot play the file. */}
-                      <a href={source}>{copy.videoFallback}</a>
+                      <ExternalLink href={source} newTabLabel={copy.newTab}>
+                        {copy.videoFallback}
+                      </ExternalLink>
                     </video>
                     <figcaption className="gallery__video-caption">
                       {translate(copy, video.description)}

@@ -6,6 +6,7 @@ import site from "@/locale/site.json";
 import { usePathname } from "next/navigation";
 import { FiArrowUpRight } from "react-icons/fi";
 import type { Dictionary, Language } from "@/lib/content";
+import { ExternalLink } from "@/components/external-link";
 
 /** Shared navigation preserves the current page when switching languages. */
 export function Header({ language, copy }: { language: Language; copy: Dictionary }) {
@@ -69,9 +70,9 @@ export function Footer({ language, copy }: { language: Language; copy: Dictionar
       <div className="footer__bottom">
         <span>{copy.name}</span>
         <span>{copy.footer}</span>
-        <a href="https://github.com/redlintles">
+        <ExternalLink href="https://github.com/redlintles" newTabLabel={copy.newTab}>
           {copy.contactLabels[2]} <FiArrowUpRight aria-hidden="true" />
-        </a>
+        </ExternalLink>
       </div>
     </footer>
   );

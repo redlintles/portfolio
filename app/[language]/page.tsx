@@ -6,6 +6,7 @@ import { mediaUrl } from "@/lib/media";
 import { ProjectCard } from "@/components/projects";
 import { Technologies } from "@/components/technologies";
 import site from "@/locale/site.json";
+import { ExternalLink } from "@/components/external-link";
 
 /** Home presents the portfolio as a progression from introduction to selected work. */
 export default async function Home({ params }: { params: Promise<{ language: string }> }) {
@@ -37,7 +38,9 @@ export default async function Home({ params }: { params: Promise<{ language: str
         <figure className="hero__image">
           <img src={mediaUrl(site.image.src)} alt={copy.imageAlt} fetchPriority="high" />
           <figcaption>
-            <a href={site.image.source}>{copy.imageCredit}</a>
+            <ExternalLink href={site.image.source} newTabLabel={copy.newTab}>
+              {copy.imageCredit}
+            </ExternalLink>
           </figcaption>
           <FiArrowDownRight className="hero__arrow" aria-hidden="true" />
         </figure>

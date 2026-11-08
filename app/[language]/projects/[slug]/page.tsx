@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { FiArrowUpRight } from "react-icons/fi";
 import { dictionary, isLanguage, projects, translate } from "@/lib/content";
 import { ProjectGallery } from "@/components/gallery";
+import { ExternalLink } from "@/components/external-link";
 
 /** Each JSON creates a detail page in every language during static generation. */
 export function generateStaticParams() {
@@ -30,15 +31,19 @@ export default async function ProjectPage({
       <h1>{translate(copy, project.project_name)}</h1>
       <p className="page__intro">{translate(copy, project.description)}</p>
       <div className="page__actions">
-        <a className="button button--solid" href={project.github_repo}>
+        <ExternalLink
+          className="button button--solid"
+          href={project.github_repo}
+          newTabLabel={copy.newTab}
+        >
           {copy.source}
           <FiArrowUpRight aria-hidden="true" />
-        </a>
+        </ExternalLink>
         {project.project_link && (
-          <a className="button" href={project.project_link}>
+          <ExternalLink className="button" href={project.project_link} newTabLabel={copy.newTab}>
             {copy.live}
             <FiArrowUpRight aria-hidden="true" />
-          </a>
+          </ExternalLink>
         )}
       </div>
       {!project.project_link && <p className="page__notice">{copy.offline}</p>}
