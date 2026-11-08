@@ -2,44 +2,54 @@
   "slug": "colour",
   "type": "Secondary",
   "project_name": "projects.colour.project_name",
-  "description": "Um gestor de cores para web designers escolherem paletas, gerarem gradientes e converter cores em formatos distintos feito em React + Typescript",
-  "technologies": ["TypeScript", "React", "Html Canvas"],
+  "description": "projects.colour.description",
+  "technologies": [
+    "TypeScript",
+    "React",
+    "Html Canvas"
+  ],
   "image_links": [
-    { "link": "Colour/home_old.png", "description": "Home(Versão antiga)" },
+    {
+      "link": "Colour/home_old.png",
+      "description": "projects.colour.media.home_old"
+    },
     {
       "link": "Colour/converter_old.png",
-      "description": "Conversor de cores(Versão antiga)"
+      "description": "projects.colour.media.converter_old"
     },
     {
       "link": "Colour/gradgen_old.png",
-      "description": "Gerador de degradês(Versão antiga)"
+      "description": "projects.colour.media.gradgen_old"
     },
     {
       "link": "Colour/palletegen_old.png",
-      "description": "Gerador de paleta de cores(Versão antiga)"
+      "description": "projects.colour.media.palletegen_old"
     },
-    { "link": "Colour/home_new.png", "description": "Home(Versão nova)" },
+    {
+      "link": "Colour/home_new.png",
+      "description": "projects.colour.media.home_new"
+    },
     {
       "link": "Colour/converter_new.png",
-      "description": "Conversor de cores(Versão nova)"
+      "description": "projects.colour.media.converter_new"
     },
     {
       "link": "Colour/gradgen_new.png",
-      "description": "Gerador de degradês(Versão nova)"
+      "description": "projects.colour.media.gradgen_new"
     },
     {
       "link": "Colour/palletegen_new.png",
-      "description": "Gerador de paleta de cores(Versão nova)"
+      "description": "projects.colour.media.palletegen_new"
     }
   ],
   "github_repo": "https://github.com/redlintles/Colour",
-  "successes": "Implementação do zero de um color picker através do HTML Canvas, ",
+  "successes": "projects.colour.successes",
   "project_link": "https://redlintles.github.io/Colour/",
   "failures": "projects.colour.failures",
   "video_links": [
     {
       "link": "Colour/demonstracao.mp4",
-      "description": "Video demonstrativo do projeto"
+      "description": "projects.colour.media.demo"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { assetPath, isAssetName } from "./assets.mjs";
+import { assetPath } from "./assets.mjs";
 
 /** Prefix local media for repository-based Pages while preserving remote and data URLs. */
 export function mediaUrl(value: string): string {
@@ -6,9 +6,11 @@ export function mediaUrl(value: string): string {
 }
 
 /**
- * Resolve an `image_links[].link` value: a plain file name points to `public/assets/`;
- * HTTPS URLs and Base64 Data URLs are returned unchanged.
+ * Resolve an `image_links[].link` or `video_links[].link` value. Validation guarantees the
+ * value is an HTTPS URL, an image Data URL, or a file name inside `public/assets/`; only
+ * the file name needs the assets folder and the GitHub Pages prefix.
  */
-export function projectImageUrl(link: string): string {
-  return isAssetName(link) ? mediaUrl(assetPath(link)) : link;
+export function projectMediaUrl(link: string): string {
+  if (link.startsWith("https://") || link.startsWith("data:")) return link;
+  return mediaUrl(assetPath(link));
 }

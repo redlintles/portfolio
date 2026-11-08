@@ -53,9 +53,11 @@
   "offline": "Este projeto não está publicado em um site ou serviço no momento.",
   "successes": "Conquistas e aprendizados",
   "failures": "Desafios e próximos passos",
-  "gallery": "Imagens do projeto",
+  "gallery": "Galeria",
+  "images": "Imagens",
   "noImages": "Nenhuma imagem disponível.",
-  "video": "Vídeos do projeto",
+  "video": "Vídeos",
+  "videoFallback": "Abrir o vídeo",
   "back": "Voltar aos projetos",
   "projectsTitle": "Projetos & experimentos.",
   "projectsBody": "Uma seleção de ferramentas, aplicações e explorações ao longo do meu aprendizado.",
@@ -144,9 +146,20 @@
     },
     "colour": {
       "project_name": "Colour",
-      "description": "Meu primeiro projeto com TypeScript e React.",
-      "successes": "Meu primeiro projeto com TypeScript e React.",
-      "failures": ""
+      "description": "Um gestor de cores para web designers escolherem paletas, gerarem degradês e converterem cores entre formatos distintos, feito em React + TypeScript.",
+      "successes": "Implementação do zero de um color picker através do HTML Canvas.",
+      "failures": "",
+      "media": {
+        "home_old": "Home (versão antiga)",
+        "converter_old": "Conversor de cores (versão antiga)",
+        "gradgen_old": "Gerador de degradês (versão antiga)",
+        "palletegen_old": "Gerador de paleta de cores (versão antiga)",
+        "home_new": "Home (versão nova)",
+        "converter_new": "Conversor de cores (versão nova)",
+        "gradgen_new": "Gerador de degradês (versão nova)",
+        "palletegen_new": "Gerador de paleta de cores (versão nova)",
+        "demo": "Vídeo demonstrativo do projeto"
+      }
     },
     "docker": {
       "project_name": "Docker Compose",

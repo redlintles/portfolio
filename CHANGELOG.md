@@ -1,5 +1,13 @@
 # Histórico de alterações
 
+## Galeria na página de detalhes
+
+- Nova seção Galeria (`components/gallery.tsx`): imagens num grid de quadros 16:9 fixos, com legenda revelada no hover ou foco do teclado e sempre visível em telas de toque.
+- Vídeos agora são reproduzidos num `<video controls>` com tema escuro, em vez de links.
+- `video_links[].link` passa a aceitar o nome de um arquivo em `public/assets/` ou uma URL HTTPS de arquivo de vídeo (`mp4`, `webm`, `ogv`, `ogg`). Caminhos iniciados por `/` e links de páginas são recusados; a validação também confere se o arquivo existe.
+- Novas chaves de idioma: `images`, `videoFallback`; `gallery` e `video` tiveram os textos ajustados.
+- `projects/colour.json` passou a usar chaves de tradução, com textos em português, inglês e espanhol.
+
 ## Pasta de assets para imagens
 
 - Nova pasta `public/assets/` para as imagens dos projetos.

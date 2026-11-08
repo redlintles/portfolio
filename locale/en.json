@@ -53,9 +53,11 @@
   "offline": "This project is not currently deployed to a website or service.",
   "successes": "Achievements and learning",
   "failures": "Challenges and next steps",
-  "gallery": "Project images",
+  "gallery": "Gallery",
+  "images": "Images",
   "noImages": "No images available.",
-  "video": "Project videos",
+  "video": "Videos",
+  "videoFallback": "Open the video",
   "back": "Back to projects",
   "projectsTitle": "Projects & experiments.",
   "projectsBody": "Tools, applications and explorations from my learning journey.",
@@ -144,9 +146,20 @@
     },
     "colour": {
       "project_name": "Colour",
-      "description": "My first TypeScript and React project.",
-      "successes": "My first TypeScript and React project.",
-      "failures": ""
+      "description": "A color manager for web designers to pick palettes, generate gradients and convert colors between formats, built with React + TypeScript.",
+      "successes": "A color picker implemented from scratch with the HTML Canvas.",
+      "failures": "",
+      "media": {
+        "home_old": "Home (old version)",
+        "converter_old": "Color converter (old version)",
+        "gradgen_old": "Gradient generator (old version)",
+        "palletegen_old": "Color palette generator (old version)",
+        "home_new": "Home (new version)",
+        "converter_new": "Color converter (new version)",
+        "gradgen_new": "Gradient generator (new version)",
+        "palletegen_new": "Color palette generator (new version)",
+        "demo": "Project demonstration video"
+      }
     },
     "docker": {
       "project_name": "Docker Compose",

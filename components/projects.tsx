@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FiArrowUpRight, FiCode } from "react-icons/fi";
 import type { Dictionary, Language, Project } from "@/lib/content";
-import { mediaUrl, projectImageUrl } from "@/lib/media";
+import { mediaUrl, projectMediaUrl } from "@/lib/media";
 
 /** Resolve project copy in a client-safe way without importing filesystem code. */
 function projectCopy(copy: Dictionary, project: Project) {
@@ -26,7 +26,7 @@ export function ProjectCard({
   const text = projectCopy(copy, project);
   // Real screenshots take priority over the optional conceptual illustration.
   let src: string | undefined;
-  if (project.image_links.length) src = projectImageUrl(project.image_links[0].link);
+  if (project.image_links.length) src = projectMediaUrl(project.image_links[0].link);
   else if (project.illustration_link) src = mediaUrl(project.illustration_link);
   return (
     <article className={`project-card${featured ? " project-card--featured" : ""}`}>

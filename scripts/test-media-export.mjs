@@ -50,7 +50,7 @@ try {
     },
   ];
   project.video_links = [
-    { link: "/demo.mp4", description: "projects.textforge.media.demo" },
+    { link: "teste/demo.mp4", description: "projects.textforge.media.demo" },
     { link: "https://example.com/demo.mp4", description: "projects.textforge.media.external" },
   ];
   fs.writeFileSync(projectFile, JSON.stringify(project));
@@ -60,8 +60,8 @@ try {
     path.join(root, "public/images/projects/textforge.svg"),
     path.join(fixture, "public/assets/teste/pipeline final.svg"),
   );
-  // The video is a link target only; no player or playback request is involved in this test.
-  fs.writeFileSync(path.join(fixture, "public/demo.mp4"), "fixture");
+  // Only the exported markup is checked, so the video file needs no real content.
+  fs.writeFileSync(path.join(fixture, "public/assets/teste/demo.mp4"), "fixture");
   const captions = {
     "pt-BR": {
       pipeline: "Pipeline de texto",
@@ -97,22 +97,27 @@ try {
     );
     for (const caption of [media.pipeline, media.sample]) {
       assert.ok(html.includes(`alt="${caption}"`), `Missing image alternative: ${language}`);
-      assert.ok(
-        html.includes(`<figcaption>${caption}</figcaption>`),
-        `Missing image caption: ${language}`,
-      );
+      assert.ok(html.includes(`>${caption}</figcaption>`), `Missing image caption: ${language}`);
     }
-    assert.ok(html.includes('href="/media-test/demo.mp4"'), "Local video needs basePath");
     assert.ok(
-      html.includes('href="https://example.com/demo.mp4"'),
+      html.includes('src="/media-test/assets/teste/demo.mp4"'),
+      "Local video resolves inside assets with basePath",
+    );
+    assert.ok(
+      html.includes('src="https://example.com/demo.mp4"'),
       "External video URL must remain unchanged",
+    );
+    assert.equal(
+      (html.match(/<video[^>]*controls/g) || []).length,
+      2,
+      "Each video renders a native player with controls",
     );
     assert.ok(
       html.includes(media.demo) && html.includes(media.external),
       "Both video descriptions must appear",
     );
     assert.ok(
-      !html.includes('class="detail__illustration"'),
+      !html.includes("images/projects/textforge.svg"),
       "Screenshots must replace fallback artwork",
     );
     const home = fs.readFileSync(path.join(fixture, `out/${language}/index.html`), "utf8");

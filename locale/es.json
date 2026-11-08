@@ -53,9 +53,11 @@
   "offline": "Este proyecto no está publicado en un sitio o servicio actualmente.",
   "successes": "Logros y aprendizajes",
   "failures": "Desafíos y próximos pasos",
-  "gallery": "Imágenes del proyecto",
+  "gallery": "Galería",
+  "images": "Imágenes",
   "noImages": "No hay imágenes disponibles.",
-  "video": "Vídeos del proyecto",
+  "video": "Vídeos",
+  "videoFallback": "Abrir el vídeo",
   "back": "Volver a los proyectos",
   "projectsTitle": "Proyectos y experimentos.",
   "projectsBody": "Herramientas, aplicaciones y exploraciones de mi aprendizaje.",
@@ -144,9 +146,20 @@
     },
     "colour": {
       "project_name": "Colour",
-      "description": "Mi primer proyecto con TypeScript y React.",
-      "successes": "Mi primer proyecto con TypeScript y React.",
-      "failures": ""
+      "description": "Un gestor de colores para que los diseñadores web elijan paletas, generen degradados y conviertan colores entre formatos, hecho con React + TypeScript.",
+      "successes": "Implementación desde cero de un selector de color con HTML Canvas.",
+      "failures": "",
+      "media": {
+        "home_old": "Inicio (versión antigua)",
+        "converter_old": "Conversor de colores (versión antigua)",
+        "gradgen_old": "Generador de degradados (versión antigua)",
+        "palletegen_old": "Generador de paletas de colores (versión antigua)",
+        "home_new": "Inicio (versión nueva)",
+        "converter_new": "Conversor de colores (versión nueva)",
+        "gradgen_new": "Generador de degradados (versión nueva)",
+        "palletegen_new": "Generador de paletas de colores (versión nueva)",
+        "demo": "Vídeo de demostración del proyecto"
+      }
     },
     "docker": {
       "project_name": "Docker Compose",

@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { assetPath, isAssetName } from "../lib/assets.mjs";
+import { assetPath, isImageAssetName, isVideoAssetName } from "../lib/assets.mjs";
 import {
   safeImage,
   safeProjectImage,
@@ -28,7 +28,7 @@ function mediaFixture() {
       { link: "https://example.com/image.png", description: "projects.textforge.media.pipeline" },
     ],
     video_links: [
-      { link: "/media/demo.mp4", description: "projects.textforge.media.demo" },
+      { link: "textforge/demo.mp4", description: "projects.textforge.media.demo" },
       { link: "https://example.com/demo.mp4", description: "projects.textforge.media.demo" },
     ],
   };
@@ -70,17 +70,25 @@ test("images accept local, HTTPS and raster Base64 assets", () => {
   }
 });
 
-test("videos accept local files and HTTPS links but reject embedded or unsafe URLs", () => {
-  for (const value of ["/media/demo.mp4", "https://example.com/watch?v=demo"])
-    assert.equal(safeVideo(value), true);
+test("videos accept asset file names and HTTPS video files only", () => {
   for (const value of [
+    "demo.mp4",
+    "textforge/demo.webm",
+    "https://example.com/media/demo.mp4",
+    "https://example.com/demo.webm?download=1",
+  ])
+    assert.equal(safeVideo(value), true, value);
+  for (const value of [
+    "/media/demo.mp4",
+    "https://example.com/watch?v=demo",
+    "demo.mov",
     "data:video/mp4;base64,AAAA",
     "javascript:alert(1)",
     "//example.com/demo.mp4",
     1,
     null,
   ])
-    assert.equal(safeVideo(value), false);
+    assert.equal(safeVideo(value), false, String(value));
 });
 
 test("project supports empty collections and multiple described assets", () => {
@@ -156,9 +164,9 @@ test("empty challenge text is valid while required project copy cannot be blank"
   assert.throws(() => validateProjectTranslations(mediaFixture(), locales), /en.*description/);
 });
 
-test("asset names accept plain file names and subfolders only", () => {
+test("image asset names accept plain file names and subfolders only", () => {
   for (const value of ["home.png", "textforge/home.webp", "Captura de tela.JPG", "logo.svg"]) {
-    assert.equal(isAssetName(value), true, value);
+    assert.equal(isImageAssetName(value), true, value);
   }
   for (const value of [
     "",
@@ -174,7 +182,14 @@ test("asset names accept plain file names and subfolders only", () => {
     "home.png?x=1",
     null,
   ]) {
-    assert.equal(isAssetName(value), false, String(value));
+    assert.equal(isImageAssetName(value), false, String(value));
+  }
+});
+
+test("video asset names require a playable extension", () => {
+  assert.equal(isVideoAssetName("Colour/demonstracao.mp4"), true);
+  for (const value of ["demo.png", "../demo.mp4", "/assets/demo.mp4", "demo"]) {
+    assert.equal(isVideoAssetName(value), false, value);
   }
 });
 
@@ -192,12 +207,21 @@ test("project images accept asset names, HTTPS and Base64 but not root paths", (
   }
 });
 
-test("asset validation requires the referenced file inside public/assets", () => {
+test("asset validation requires every referenced image and video inside public/assets", () => {
   const publicDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "portfolio-assets-"));
   try {
     fs.mkdirSync(path.join(publicDirectory, "assets/textforge"), { recursive: true });
     fs.writeFileSync(path.join(publicDirectory, "assets/textforge/pipeline.png"), "fixture");
+    fs.writeFileSync(path.join(publicDirectory, "assets/textforge/demo.mp4"), "fixture");
     assert.doesNotThrow(() => validateProjectAssets(mediaFixture(), publicDirectory));
+    const missingVideo = {
+      ...mediaFixture(),
+      video_links: [{ link: "absent.mp4", description: "projects.textforge.media.demo" }],
+    };
+    assert.throws(
+      () => validateProjectAssets(missingVideo, publicDirectory),
+      /video_links\[0\].*public\/assets\/absent\.mp4/,
+    );
     const missing = {
       ...mediaFixture(),
       image_links: [{ link: "absent.png", description: "projects.textforge.media.pipeline" }],

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FiArrowUpRight } from "react-icons/fi";
 import { dictionary, isLanguage, projects, translate } from "@/lib/content";
-import { mediaUrl, projectImageUrl } from "@/lib/media";
+import { ProjectGallery } from "@/components/gallery";
 
 /** Each JSON creates a detail page in every language during static generation. */
 export function generateStaticParams() {
@@ -10,7 +10,7 @@ export function generateStaticParams() {
 }
 export const dynamicParams = false;
 
-/** Render project media, publication links, and documented outcomes. */
+/** Render publication links, the media gallery, and documented outcomes. */
 export default async function ProjectPage({
   params,
 }: {
@@ -42,45 +42,7 @@ export default async function ProjectPage({
         )}
       </div>
       {!project.project_link && <p className="page__notice">{copy.offline}</p>}
-      <section className="detail__gallery" aria-label={copy.gallery}>
-        {project.image_links.length ? (
-          project.image_links.map((image, index) => (
-            <figure className="detail__image" key={`${index}-${image.link.slice(0, 30)}`}>
-              <img
-                src={projectImageUrl(image.link)}
-                alt={translate(copy, image.description)}
-                loading="lazy"
-              />
-              <figcaption>{translate(copy, image.description)}</figcaption>
-            </figure>
-          ))
-        ) : project.illustration_link ? (
-          <figure className="detail__illustration">
-            <img
-              src={mediaUrl(project.illustration_link)}
-              alt={`${translate(copy, project.project_name)} — ${copy.illustration}`}
-            />
-            <figcaption>{copy.illustration}</figcaption>
-          </figure>
-        ) : (
-          <p className="detail__placeholder">{copy.noImages}</p>
-        )}
-      </section>
-      {project.video_links.length > 0 && (
-        <section className="detail__videos" aria-labelledby="project-videos">
-          <h2 id="project-videos">{copy.video}</h2>
-          <ul className="detail__video-list">
-            {project.video_links.map((video, index) => (
-              <li key={`${index}-${video.link}`}>
-                <a className="button" href={mediaUrl(video.link)}>
-                  {translate(copy, video.description)}
-                  <FiArrowUpRight aria-hidden="true" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <ProjectGallery project={project} copy={copy} />
       <div className="detail__columns">
         <section>
           <h2>{copy.successes}</h2>

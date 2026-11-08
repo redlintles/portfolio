@@ -41,7 +41,7 @@ Cada arquivo `projects/*.json` define exatamente um projeto. Copie um existente 
   ],
   "video_links": [
     {
-      "link": "https://example.com/demonstracao",
+      "link": "meu-projeto/demonstracao.mp4",
       "description": "projects.meu-projeto.media.demo"
     }
   ],
@@ -76,7 +76,7 @@ Cada item de `image_links` e `video_links` é um objeto com:
 - `link`: endereço do asset.
 - `description`: chave de tradução com uma frase curta sobre o asset, no namespace `projects.<slug>`.
 
-As descrições devem existir e ser não vazias nos três arquivos de idioma. Nas imagens, o texto traduzido é usado como `alt` e legenda; nos vídeos, como rótulo do link. A primeira imagem ilustra o cartão e todas aparecem na galeria na ordem da lista. Links locais recebem automaticamente o prefixo do GitHub Pages.
+As descrições devem existir e ser não vazias nos três arquivos de idioma. Na página de detalhes, a seção **Galeria** mostra as imagens num grid de quadros 16:9 de tamanho fixo (a imagem é ajustada sem cortes); a descrição traduzida é o `alt` e aparece como legenda no hover ou foco do teclado, e fica sempre visível em telas de toque. Os vídeos aparecem abaixo, com controles nativos em tema escuro e a descrição como legenda. A primeira imagem ilustra o cartão. Links locais recebem automaticamente o prefixo do GitHub Pages.
 
 Imagens aceitam três formatos:
 
@@ -84,7 +84,7 @@ Imagens aceitam três formatos:
 - **URL HTTPS** externa, usada sem alteração.
 - **Data URL raster** completa, como `data:image/png;base64,...`.
 
-Caminhos iniciados por `/`, `..` e barras invertidas são recusados em `image_links`. O build e o modo `dev` falham, indicando o campo, quando um nome de arquivo não existe em `public/assets/`. SVG em Data URL é recusado. Vídeos aceitam HTTPS ou caminhos locais; Data URLs de vídeo não são suportadas. Projetos sem imagens usam `illustration_link`, quando configurado. Sem imagens ou ilustração, a galeria exibe um estado vazio.
+Caminhos iniciados por `/`, `..` e barras invertidas são recusados em `image_links`. O build e o modo `dev` falham, indicando o campo, quando um nome de arquivo não existe em `public/assets/`. SVG em Data URL é recusado. Vídeos são exibidos num player nativo (`<video controls>`), então o link precisa ser um arquivo de vídeo: um nome de arquivo em `public/assets/` (como `meu-projeto/demo.mp4`) ou uma URL HTTPS terminada em `.mp4`, `.webm`, `.ogv` ou `.ogg`. Links de páginas, como YouTube, e Data URLs de vídeo são recusados. Prefira MP4 com H.264 e AAC, que todos os navegadores reproduzem. Projetos sem imagens usam `illustration_link`, quando configurado. Sem imagens ou ilustração, a galeria exibe um estado vazio.
 
 ### Migração do formato anterior
 
