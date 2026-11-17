@@ -116,10 +116,31 @@
       "failures": ""
     },
     "api-php": {
-      "project_name": "API PHP",
-      "description": "API para uma empresa hipotética de materiais de construção.",
-      "successes": "API para uma empresa hipotética de materiais de construção.",
-      "failures": ""
+      "project_name": "Alicerce (API PHP)",
+      "description": "Loja online e painel administrativo de uma empresa fictícia de materiais de construção: API REST em PHP 8 puro com Propel e MySQL, frontend em React + TypeScript e ambiente completo em Docker.",
+      "successes": "API REST sem framework cobrindo produtos, estoque, categorias, descontos, clientes, carrinhos, pedidos, vendedores e endereços, com autenticação por chave de API e permissões CRUD por administrador. A loja e o painel em React usam todas as rotas, a chave da loja fica escondida atrás do proxy NGINX, e um teste de ponta a ponta valida 141 cenários. Sobe com um único docker compose up, já com dados de demonstração.",
+      "failures": "A primeira versão tinha falhas sérias, como senhas em texto puro, hashes expostos nas respostas e arquivos acessíveis sem chave; foram 30 correções, todas documentadas. Ainda falta otimizar a validação da chave, que compara a chave com o hash de cada administrador e deixa cada requisição em torno de 1 s, e aplicar as promoções também no carrinho.",
+      "media": {
+        "loja_catalogo": "Loja: catálogo de materiais",
+        "loja_menu_categorias": "Loja: menu de categorias",
+        "loja_categoria_tintas": "Loja: produtos da categoria Tintas, com promoções",
+        "loja_busca": "Loja: busca por produto",
+        "loja_produto": "Loja: página do produto",
+        "loja_login": "Loja: login do cliente",
+        "loja_carrinho": "Loja: carrinho de compras",
+        "loja_minha_conta": "Loja: conta do cliente com histórico de pedidos",
+        "painel_login": "Painel: acesso por chave de API",
+        "painel_produtos": "Painel: gestão de produtos e estoque",
+        "painel_pedidos": "Painel: consulta de pedido",
+        "painel_clientes": "Painel: consulta de cliente com carrinho e pedidos",
+        "painel_descontos": "Painel: gestão de descontos",
+        "painel_administradores": "Painel: administradores",
+        "painel_permissoes": "Painel: permissões de cada chave (criar, ler, editar, apagar)",
+        "mobile_catalogo": "Celular: catálogo",
+        "mobile_produto": "Celular: página do produto",
+        "mobile_painel": "Celular: painel administrativo",
+        "demo": "Vídeo demonstrativo do projeto"
+      }
     },
     "gns3": {
       "project_name": "GNS3 · Fork",

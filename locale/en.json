@@ -116,10 +116,31 @@
       "failures": ""
     },
     "api-php": {
-      "project_name": "API PHP",
-      "description": "API for a hypothetical building-materials company.",
-      "successes": "API for a hypothetical building-materials company.",
-      "failures": ""
+      "project_name": "Alicerce (PHP API)",
+      "description": "Online store and admin panel for a fictional building-materials company: a REST API in plain PHP 8 with Propel and MySQL, a React + TypeScript frontend and a full Docker setup.",
+      "successes": "Framework-free REST API covering products, stock, categories, discounts, customers, carts, orders, sellers and addresses, with API-key authentication and per-admin CRUD permissions. The React store and admin panel use every route, the store key stays hidden behind the NGINX proxy, and an end-to-end test checks 141 scenarios. It starts with a single docker compose up, demo data included.",
+      "failures": "The first version had serious flaws, such as plain-text passwords, hashes exposed in responses and files reachable without a key; 30 fixes followed, all documented. Still to do: speed up key validation, which checks the key against every admin's hash and makes each request take about 1 s, and apply catalog discounts in the cart as well.",
+      "media": {
+        "loja_catalogo": "Store: materials catalog",
+        "loja_menu_categorias": "Store: category menu",
+        "loja_categoria_tintas": "Store: Paints category, with discounts",
+        "loja_busca": "Store: product search",
+        "loja_produto": "Store: product page",
+        "loja_login": "Store: customer login",
+        "loja_carrinho": "Store: shopping cart",
+        "loja_minha_conta": "Store: customer account with order history",
+        "painel_login": "Admin panel: API key sign-in",
+        "painel_produtos": "Admin panel: products and stock",
+        "painel_pedidos": "Admin panel: order lookup",
+        "painel_clientes": "Admin panel: customer lookup with cart and orders",
+        "painel_descontos": "Admin panel: discounts",
+        "painel_administradores": "Admin panel: administrators",
+        "painel_permissoes": "Admin panel: per-key permissions (create, read, update, delete)",
+        "mobile_catalogo": "Mobile: catalog",
+        "mobile_produto": "Mobile: product page",
+        "mobile_painel": "Mobile: admin panel",
+        "demo": "Project demonstration video"
+      }
     },
     "gns3": {
       "project_name": "GNS3 · Fork",

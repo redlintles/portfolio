@@ -3,12 +3,98 @@
   "type": "Primary",
   "project_name": "projects.api-php.project_name",
   "description": "projects.api-php.description",
-  "technologies": ["PHP"],
-  "image_links": [],
+  "technologies": [
+    "PHP",
+    "MySQL",
+    "Propel",
+    "React",
+    "TypeScript",
+    "Docker",
+    "Nginx"
+  ],
+  "image_links": [
+    {
+      "link": "alicerce/loja-catalogo.webp",
+      "description": "projects.api-php.media.loja_catalogo"
+    },
+    {
+      "link": "alicerce/loja-menu-categorias.webp",
+      "description": "projects.api-php.media.loja_menu_categorias"
+    },
+    {
+      "link": "alicerce/loja-categoria-tintas.webp",
+      "description": "projects.api-php.media.loja_categoria_tintas"
+    },
+    {
+      "link": "alicerce/loja-busca.webp",
+      "description": "projects.api-php.media.loja_busca"
+    },
+    {
+      "link": "alicerce/loja-produto.webp",
+      "description": "projects.api-php.media.loja_produto"
+    },
+    {
+      "link": "alicerce/loja-login.webp",
+      "description": "projects.api-php.media.loja_login"
+    },
+    {
+      "link": "alicerce/loja-carrinho.webp",
+      "description": "projects.api-php.media.loja_carrinho"
+    },
+    {
+      "link": "alicerce/loja-minha-conta.webp",
+      "description": "projects.api-php.media.loja_minha_conta"
+    },
+    {
+      "link": "alicerce/painel-login.webp",
+      "description": "projects.api-php.media.painel_login"
+    },
+    {
+      "link": "alicerce/painel-produtos.webp",
+      "description": "projects.api-php.media.painel_produtos"
+    },
+    {
+      "link": "alicerce/painel-pedidos.webp",
+      "description": "projects.api-php.media.painel_pedidos"
+    },
+    {
+      "link": "alicerce/painel-clientes.webp",
+      "description": "projects.api-php.media.painel_clientes"
+    },
+    {
+      "link": "alicerce/painel-descontos.webp",
+      "description": "projects.api-php.media.painel_descontos"
+    },
+    {
+      "link": "alicerce/painel-administradores.webp",
+      "description": "projects.api-php.media.painel_administradores"
+    },
+    {
+      "link": "alicerce/painel-permissoes.webp",
+      "description": "projects.api-php.media.painel_permissoes"
+    },
+    {
+      "link": "alicerce/mobile-catalogo.webp",
+      "description": "projects.api-php.media.mobile_catalogo"
+    },
+    {
+      "link": "alicerce/mobile-produto.webp",
+      "description": "projects.api-php.media.mobile_produto"
+    },
+    {
+      "link": "alicerce/mobile-painel.webp",
+      "description": "projects.api-php.media.mobile_painel"
+    }
+  ],
   "github_repo": "https://github.com/redlintles/api_php",
   "successes": "projects.api-php.successes",
   "project_link": "",
   "failures": "projects.api-php.failures",
   "illustration_link": "/images/projects/api.svg",
-  "video_links": []
+  "video_links": [
+    {
+      "link": "alicerce/demonstracao.mp4",
+      "description": "projects.api-php.media.demo"
+    }
+  ]
 }

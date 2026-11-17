@@ -116,10 +116,31 @@
       "failures": ""
     },
     "api-php": {
-      "project_name": "API PHP",
-      "description": "API para una empresa hipotética de materiales de construcción.",
-      "successes": "API para una empresa hipotética de materiales de construcción.",
-      "failures": ""
+      "project_name": "Alicerce (API PHP)",
+      "description": "Tienda online y panel administrativo de una empresa ficticia de materiales de construcción: API REST en PHP 8 puro con Propel y MySQL, frontend en React + TypeScript y entorno completo en Docker.",
+      "successes": "API REST sin framework que cubre productos, stock, categorías, descuentos, clientes, carritos, pedidos, vendedores y direcciones, con autenticación por clave de API y permisos CRUD por administrador. La tienda y el panel en React usan todas las rutas, la clave de la tienda queda oculta detrás del proxy NGINX y una prueba de extremo a extremo valida 141 escenarios. Se levanta con un solo docker compose up, ya con datos de demostración.",
+      "failures": "La primera versión tenía fallas serias, como contraseñas en texto plano, hashes expuestos en las respuestas y archivos accesibles sin clave; fueron 30 correcciones, todas documentadas. Falta optimizar la validación de la clave, que la compara con el hash de cada administrador y deja cada solicitud en torno a 1 s, y aplicar las promociones también en el carrito.",
+      "media": {
+        "loja_catalogo": "Tienda: catálogo de materiales",
+        "loja_menu_categorias": "Tienda: menú de categorías",
+        "loja_categoria_tintas": "Tienda: categoría Pinturas, con descuentos",
+        "loja_busca": "Tienda: búsqueda de productos",
+        "loja_produto": "Tienda: página del producto",
+        "loja_login": "Tienda: inicio de sesión del cliente",
+        "loja_carrinho": "Tienda: carrito de compras",
+        "loja_minha_conta": "Tienda: cuenta del cliente con historial de pedidos",
+        "painel_login": "Panel: acceso con clave de API",
+        "painel_produtos": "Panel: productos y stock",
+        "painel_pedidos": "Panel: consulta de pedidos",
+        "painel_clientes": "Panel: consulta de cliente con carrito y pedidos",
+        "painel_descontos": "Panel: descuentos",
+        "painel_administradores": "Panel: administradores",
+        "painel_permissoes": "Panel: permisos de cada clave (crear, leer, editar, borrar)",
+        "mobile_catalogo": "Móvil: catálogo",
+        "mobile_produto": "Móvil: página del producto",
+        "mobile_painel": "Móvil: panel administrativo",
+        "demo": "Vídeo de demostración del proyecto"
+      }
     },
     "gns3": {
       "project_name": "GNS3 · Fork",
