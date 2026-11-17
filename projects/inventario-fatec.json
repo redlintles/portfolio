@@ -3,11 +3,93 @@
   "type": "Primary",
   "project_name": "projects.inventario-fatec.project_name",
   "description": "projects.inventario-fatec.description",
-  "technologies": ["TypeScript", "NestJS", "React", "Kotlin"],
-  "image_links": [],
+  "technologies": [
+    "TypeScript",
+    "NestJS",
+    "PostgreSQL",
+    "TypeORM",
+    "React",
+    "Vite",
+    "Kotlin",
+    "Jetpack Compose",
+    "SQLite",
+    "Docker",
+    "Nginx"
+  ],
+  "image_links": [
+    {
+      "link": "inventario-fatec/portal-login.webp",
+      "description": "projects.inventario-fatec.media.portal_login"
+    },
+    {
+      "link": "inventario-fatec/portal-visao-geral.webp",
+      "description": "projects.inventario-fatec.media.portal_visao_geral"
+    },
+    {
+      "link": "inventario-fatec/portal-ativos.webp",
+      "description": "projects.inventario-fatec.media.portal_ativos"
+    },
+    {
+      "link": "inventario-fatec/portal-ativos-disponibilizados.webp",
+      "description": "projects.inventario-fatec.media.portal_ativos_disponibilizados"
+    },
+    {
+      "link": "inventario-fatec/portal-ativo-detalhe.webp",
+      "description": "projects.inventario-fatec.media.portal_ativo_detalhe"
+    },
+    {
+      "link": "inventario-fatec/portal-ativo-historico.webp",
+      "description": "projects.inventario-fatec.media.portal_ativo_historico"
+    },
+    {
+      "link": "inventario-fatec/portal-inventario.webp",
+      "description": "projects.inventario-fatec.media.portal_inventario"
+    },
+    {
+      "link": "inventario-fatec/portal-divergencias.webp",
+      "description": "projects.inventario-fatec.media.portal_divergencias"
+    },
+    {
+      "link": "inventario-fatec/portal-importacao.webp",
+      "description": "projects.inventario-fatec.media.portal_importacao"
+    },
+    {
+      "link": "inventario-fatec/portal-localizacoes.webp",
+      "description": "projects.inventario-fatec.media.portal_localizacoes"
+    },
+    {
+      "link": "inventario-fatec/portal-usuarios.webp",
+      "description": "projects.inventario-fatec.media.portal_usuarios"
+    },
+    {
+      "link": "inventario-fatec/portal-parametros.webp",
+      "description": "projects.inventario-fatec.media.portal_parametros"
+    },
+    {
+      "link": "inventario-fatec/portal-relatorios.webp",
+      "description": "projects.inventario-fatec.media.portal_relatorios"
+    },
+    {
+      "link": "inventario-fatec/portal-auditoria.webp",
+      "description": "projects.inventario-fatec.media.portal_auditoria"
+    },
+    {
+      "link": "inventario-fatec/portal-ajuda.webp",
+      "description": "projects.inventario-fatec.media.portal_ajuda"
+    },
+    {
+      "link": "inventario-fatec/mobile-visao-geral.webp",
+      "description": "projects.inventario-fatec.media.mobile_visao_geral"
+    }
+  ],
   "github_repo": "https://github.com/redlintles/projeto_estagio_inventario_fatec",
   "successes": "projects.inventario-fatec.successes",
   "project_link": "",
   "failures": "projects.inventario-fatec.failures",
-  "video_links": []
+  "video_links": [
+    {
+      "link": "inventario-fatec/demonstracao.mp4",
+      "description": "projects.inventario-fatec.media.demo"
+    }
+  ]
 }

@@ -110,10 +110,29 @@
       "failures": "Os bindings para Python e Node.js continuam em desenvolvimento."
     },
     "inventario-fatec": {
-      "project_name": "Inventário Fatec",
-      "description": "Gestão de ativos e inventário com aplicativo para leitura de códigos de barras.",
-      "successes": "Sistema de inventário desenvolvido no estágio da Fatec, com aplicação web e leitura de códigos de barras em Kotlin.",
-      "failures": ""
+      "project_name": "Gestão Patrimonial Fatec",
+      "description": "Sistema de gestão patrimonial e inventário criado no meu estágio para a Fatec Cotia. Substitui a planilha enviada pelo estado e o leitor de código de barras improvisado por uma API em NestJS com PostgreSQL, um portal em React e um aplicativo Android em Kotlin que lê as etiquetas pela câmera e funciona sem internet.",
+      "successes": "Importa a planilha institucional preservando identificadores e mostra as diferenças campo a campo, para que a equipe decida o que manter em cada reimportação. O app faz o inventário sala por sala com fila offline (SQLite + WorkManager) e detecta conflitos por versão, sem sobrescrever dados. Todo o ciclo do bem tem histórico: incorporado, conferido, disponibilizado com foto e nota física, reservado, transportado e transferido, ou enviado para baixa após 20 dias sem interessados, com avisos por e-mail. Também há permissões por tarefa com revogação de sessões, alterações em lote com desfazer e refazer, relatórios em CSV, XLSX e ODS, uma auditoria de segurança documentada, testes com PostgreSQL real na CI e instalação por assistente no Windows ou Linux, com APK assinado.",
+      "failures": "A implantação definitiva ainda depende da faculdade: hoje o sistema roda em HTTP na rede local, e HTTPS, SMTP real e a rotina de backups precisam ser definidos pela instituição. A leitura pela câmera ainda precisa ser homologada com as etiquetas e os celulares reais. O inventário precisa ser preparado com internet antes de entrar na sala, não há recuperação de senha por e-mail nem relatórios em PDF, e a leitura das planilhas é síncrona, com limite de 10.000 linhas por arquivo; bases maiores vão exigir processamento em segundo plano.",
+      "media": {
+        "portal_login": "Portal: tela de acesso",
+        "portal_visao_geral": "Portal: visão geral com valor da base e bens por situação",
+        "portal_ativos": "Portal: lista de ativos com localização, condição física e status",
+        "portal_ativos_disponibilizados": "Portal: ativos filtrados por status Disponibilizado",
+        "portal_ativo_detalhe": "Portal: ficha do ativo com os dados da planilha institucional",
+        "portal_ativo_historico": "Portal: reserva para outra unidade, fotos e histórico do ativo",
+        "portal_inventario": "Portal: inventário em andamento, com bens ainda não conferidos",
+        "portal_divergencias": "Portal: tratamento de divergência registrada no inventário",
+        "portal_importacao": "Portal: importação da planilha patrimonial",
+        "portal_localizacoes": "Portal: cadastro de salas por unidade",
+        "portal_usuarios": "Portal: usuários e permissões por tarefa",
+        "portal_parametros": "Portal: prazo de baixa, e-mails e bloqueio de inventários simultâneos",
+        "portal_relatorios": "Portal: prévia de relatório antes da exportação",
+        "portal_auditoria": "Portal: auditoria das movimentações",
+        "portal_ajuda": "Portal: guia de uso integrado",
+        "mobile_visao_geral": "Celular: portal em tela pequena",
+        "demo": "Vídeo demonstrativo do portal, com dados fictícios"
+      }
     },
     "api-php": {
       "project_name": "Alicerce (API PHP)",

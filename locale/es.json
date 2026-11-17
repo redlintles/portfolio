@@ -110,10 +110,29 @@
       "failures": "Los bindings para Python y Node.js siguen en desarrollo."
     },
     "inventario-fatec": {
-      "project_name": "Inventario Fatec",
-      "description": "Gestión de activos e inventario con aplicación para leer códigos de barras.",
-      "successes": "Sistema de inventario desarrollado durante mis prácticas en Fatec, con aplicación web y lectura de códigos de barras en Kotlin.",
-      "failures": ""
+      "project_name": "Gestión Patrimonial Fatec",
+      "description": "Sistema de gestión patrimonial e inventario que desarrollé durante mis prácticas para Fatec Cotia. Reemplaza la planilla enviada por el estado y un lector de códigos de barras improvisado por una API en NestJS con PostgreSQL, un portal en React y una aplicación Android en Kotlin que lee las etiquetas con la cámara y funciona sin internet.",
+      "successes": "Importa la planilla institucional conservando los identificadores y muestra las diferencias campo por campo, para que el equipo decida qué mantener en cada reimportación. La aplicación hace el inventario sala por sala con una cola offline (SQLite + WorkManager) y detecta conflictos de versión sin sobrescribir datos. Todo el ciclo del bien queda registrado: incorporado, verificado, puesto a disposición con foto y nota física, reservado, transportado y transferido, o enviado a baja tras 20 días sin interesados, con avisos por correo. También ofrece permisos por tarea con revocación de sesiones, cambios en lote con deshacer y rehacer, informes en CSV, XLSX y ODS, una auditoría de seguridad documentada, pruebas con PostgreSQL real en la CI e instalación guiada en Windows o Linux, con APK firmado.",
+      "failures": "La implantación definitiva todavía depende de la facultad: hoy el sistema funciona por HTTP en la red local, y HTTPS, un servidor SMTP real y la rutina de copias de seguridad deben ser definidos por la institución. La lectura con la cámara aún necesita validarse con las etiquetas y los teléfonos reales. El inventario debe prepararse con internet antes de entrar a la sala, no hay recuperación de contraseña por correo ni informes en PDF, y las planillas se procesan de forma síncrona, con un límite de 10.000 filas por archivo; bases más grandes requerirán procesamiento en segundo plano.",
+      "media": {
+        "portal_login": "Portal: pantalla de acceso",
+        "portal_visao_geral": "Portal: resumen con el valor total y los bienes por estado",
+        "portal_ativos": "Portal: lista de activos con ubicación, estado físico y estado",
+        "portal_ativos_disponibilizados": "Portal: activos filtrados por el estado Disponible",
+        "portal_ativo_detalhe": "Portal: ficha del activo con los datos de la planilla institucional",
+        "portal_ativo_historico": "Portal: reserva para otra unidad, fotos e historial del activo",
+        "portal_inventario": "Portal: inventario en curso, con bienes aún por verificar",
+        "portal_divergencias": "Portal: tratamiento de una divergencia registrada en el inventario",
+        "portal_importacao": "Portal: importación de la planilla patrimonial",
+        "portal_localizacoes": "Portal: salas registradas por unidad",
+        "portal_usuarios": "Portal: usuarios y permisos por tarea",
+        "portal_parametros": "Portal: plazo de baja, correos y bloqueo de inventarios simultáneos",
+        "portal_relatorios": "Portal: vista previa del informe antes de exportar",
+        "portal_auditoria": "Portal: auditoría de movimientos",
+        "portal_ajuda": "Portal: guía de uso integrada",
+        "mobile_visao_geral": "Teléfono: portal en pantalla pequeña",
+        "demo": "Video de demostración del portal, con datos ficticios"
+      }
     },
     "api-php": {
       "project_name": "Alicerce (API PHP)",

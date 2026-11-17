@@ -110,10 +110,29 @@
       "failures": "Python and Node.js bindings are still in development."
     },
     "inventario-fatec": {
-      "project_name": "Fatec Inventory",
-      "description": "Asset and inventory management with a barcode-scanning app.",
-      "successes": "An inventory system developed during my Fatec internship, with a web application and Kotlin barcode scanning.",
-      "failures": ""
+      "project_name": "Fatec Asset Management",
+      "description": "Asset and inventory management system I built during my internship for Fatec Cotia. It replaces the state-issued spreadsheet and a makeshift barcode reader with a NestJS API backed by PostgreSQL, a React portal and a Kotlin Android app that scans labels with the camera and works offline.",
+      "successes": "Imports the institutional spreadsheet while keeping its identifiers, and shows differences field by field so the staff decide what to keep on every re-import. The app runs room-by-room inventories with an offline queue (SQLite + WorkManager) and detects version conflicts instead of overwriting data. Every step of an asset's life is recorded: incorporated, checked, made available with a photo and a condition score, reserved, shipped and transferred, or sent for write-off after 20 days with no takers, with e-mail notices. It also has per-task permissions with session revocation, bulk changes with undo and redo, CSV, XLSX and ODS reports, a documented security review, CI tests against a real PostgreSQL database, and a guided installer for Windows or Linux with a signed APK.",
+      "failures": "The final deployment still depends on the college: the system currently runs over HTTP on the local network, and HTTPS, a real SMTP server and the backup routine must be set up by the institution. Camera scanning still needs to be validated with the real labels and phones. Inventories must be prepared online before entering a room, there is no password recovery by e-mail and no PDF reports, and spreadsheets are parsed synchronously with a 10,000-row limit per file; larger databases will need background processing.",
+      "media": {
+        "portal_login": "Portal: sign-in screen",
+        "portal_visao_geral": "Portal: overview with total asset value and assets by status",
+        "portal_ativos": "Portal: asset list with location, condition and status",
+        "portal_ativos_disponibilizados": "Portal: assets filtered by the Available status",
+        "portal_ativo_detalhe": "Portal: asset record with the institutional spreadsheet data",
+        "portal_ativo_historico": "Portal: reservation for another campus, photos and asset history",
+        "portal_inventario": "Portal: inventory in progress, with assets still to be checked",
+        "portal_divergencias": "Portal: handling a discrepancy logged during an inventory",
+        "portal_importacao": "Portal: asset spreadsheet import",
+        "portal_localizacoes": "Portal: rooms registered per campus",
+        "portal_usuarios": "Portal: users and per-task permissions",
+        "portal_parametros": "Portal: write-off deadline, e-mails and concurrent-inventory lock",
+        "portal_relatorios": "Portal: report preview before export",
+        "portal_auditoria": "Portal: movement audit log",
+        "portal_ajuda": "Portal: built-in user guide",
+        "mobile_visao_geral": "Phone: portal on a small screen",
+        "demo": "Portal demo video, with fictional data"
+      }
     },
     "api-php": {
       "project_name": "Alicerce (PHP API)",
